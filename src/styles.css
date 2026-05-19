@@ -1,0 +1,207 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Aramana Hospital & Heart Centre - Production-Grade Design System.
+ * Focus: Spatial Orchestration, Atmospheric Transitions, Typography Cadence.
+ */
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  
+  --color-cardiac-blue: #0B2545;
+  --color-emerald: #10B981;
+  --color-diagnostic-navy: #051923;
+  --color-soft-grey: #F1F5F9;
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--surface);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--ink);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--ink);
+  --color-destructive: oklch(0.55 0.18 25);
+  --color-destructive-foreground: var(--surface);
+  --color-input: var(--border);
+  --color-ring: var(--primary);
+}
+
+:root {
+  --ink: #0F172A;
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --primary: #0B2545; /* Deep Cardiac Blue */
+  --accent: #10B981;  /* Secondary Emerald */
+  --secondary: #1E293B;
+  --muted: #64748B;
+  --border: #E2E8F0;
+  
+  /* Systemic Spacing Logic - Premium Orchestration */
+  --section-spacing-sm: 4rem;
+  --section-spacing-md: 8rem;
+  --section-spacing-lg: 12rem;
+  --content-max-width: 85rem;
+  --header-height: 5rem;
+  --hero-padding-top: 10rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.7; /* Increased for premium reading rhythm */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    @apply mb-6 last:mb-0;
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: white;
+  }
+}
+
+@layer components {
+  /* Systemic Containment & Orchestration */
+  .container-custom {
+    @apply w-full mx-auto px-6 md:px-12 lg:px-20;
+    max-width: var(--content-max-width);
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-48; /* Increased for spatial authority */
+  }
+
+  /* Typography Cadence - Editorial Focus */
+  .text-display {
+    @apply font-serif italic;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  .heading-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.05];
+  }
+
+  .heading-section {
+    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-10;
+  }
+
+  .text-editorial {
+    @apply text-lg md:text-xl text-muted leading-relaxed max-w-[65ch];
+  }
+
+  /* Atmospheric Transition Systems */
+  .overlay-hero-dark {
+    background: linear-gradient(to bottom, 
+      rgba(5, 25, 35, 0.85) 0%, 
+      rgba(5, 25, 35, 0.6) 40%, 
+      rgba(5, 25, 35, 0.95) 100%
+    );
+  }
+
+  .overlay-fade-to-white {
+    background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0) 0%, 
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  /* Fixed "Visual Mud" - Balanced stack for About/Cardiology pages */
+  .overlay-cinematic-fog {
+    background: linear-gradient(to bottom, 
+      rgba(5, 25, 35, 0.7) 0%, 
+      rgba(5, 25, 35, 0.4) 50%, 
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  .fade-edge-bottom {
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  }
+
+  /* Button Discipline - Micro-spacing precision */
+  .btn-primary {
+    @apply bg-primary text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-[11px] transition-all duration-500 ease-[0.22,1,0.36,1] hover:bg-primary/95 hover:-translate-y-px active:scale-98 shadow-xl shadow-primary/5;
+  }
+
+  .btn-emerald {
+    @apply bg-emerald text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-[11px] transition-all duration-500 ease-[0.22,1,0.36,1] hover:bg-emerald/95 hover:-translate-y-px active:scale-98 shadow-xl shadow-emerald/10;
+  }
+
+  .btn-outline-white {
+    @apply border border-white/20 bg-white/5 backdrop-blur-md text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-[11px] transition-all duration-500 ease-[0.22,1,0.36,1] hover:bg-white/10 hover:-translate-y-px active:scale-98;
+  }
+
+  /* Image Governance System - Cinematic Institutional Look */
+  .img-cinematic {
+    @apply w-full h-full object-cover transition-all duration-1000 ease-[0.22,1,0.36,1];
+    filter: brightness(0.9) contrast(1.05); /* Clean institutional grading */
+  }
+
+  .img-container {
+    @apply overflow-hidden rounded-lg relative bg-slate-100;
+  }
+
+  .img-container:hover .img-cinematic {
+    @apply scale-102;
+    filter: brightness(1);
+  }
+
+  /* Aspect Ratio Discipline */
+  .aspect-hero { aspect-ratio: 16/9; }
+  .aspect-portrait { aspect-ratio: 4/5; }
+  .aspect-square { aspect-ratio: 1/1; }
+  .aspect-landscape { aspect-ratio: 16/10; }
+
+  /* Overlay Governance */
+  .overlay-cinematic {
+    @apply absolute inset-0 z-10 pointer-events-none;
+    background: linear-gradient(to bottom, 
+      rgba(5, 25, 35, 0.35) 0%, 
+      rgba(5, 25, 35, 0.55) 100%
+    );
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
