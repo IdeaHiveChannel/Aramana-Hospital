@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { doctors } from "../data/doctors";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Calendar, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Clock, CheckCircle2 } from "lucide-react";
 import { PageHeader } from "../components/site/PageHeader";
 
 export const Route = createFileRoute("/doctors/")({
@@ -23,7 +23,7 @@ function DoctorsPage() {
         title="Consult the Best Heart"
         italicTail="Specialists."
         intro="A collective of highly experienced medical consultants including senior interventional cardiologists, heart specialists, and multi-specialty experts in Kasaragod."
-        slotId="doctors-header"
+        pageKey="doctors"
       />
 
       {/* Doctors Grid - Editorial Orchestration */}
@@ -41,7 +41,7 @@ function DoctorsPage() {
                 <Link 
                   to="/doctors/$slug" 
                   params={{ slug: doctor.slug }}
-                  className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col h-full"
+                  className="group flex bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex-col h-full"
                 >
                   {/* Doctor Image - Trust Anchor Style */}
                   <div className="aspect-3/4 overflow-hidden relative bg-slate-50">
@@ -58,7 +58,7 @@ function DoctorsPage() {
                   </div>
 
                   {/* Doctor Info - Micro-spacing precision */}
-                  <div className="p-10 flex-grow flex flex-col">
+                  <div className="p-10 grow flex flex-col">
                     <div className="flex items-center gap-3 mb-6">
                       <span className="h-px w-8 bg-emerald" />
                       <span className="text-emerald font-bold uppercase tracking-[0.2em] text-[9px]">Senior Consultant</span>

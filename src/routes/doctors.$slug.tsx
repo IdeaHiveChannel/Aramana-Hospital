@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { doctors } from "../data/doctors";
 import { hospital } from "../data/hospital";
+import { HeroMediaCarousel } from "../components/site/HeroMediaCarousel";
+import { heroAssets } from "../data/heroAssets";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Phone, MessageSquare, Calendar, CheckCircle2, Award, GraduationCap } from "lucide-react";
 
@@ -24,11 +26,8 @@ function DoctorPage() {
   return (
     <div className="bg-white">
       {/* Doctor Profile Header - Restrained but Authoritative */}
-      <section className="bg-diagnostic-navy pt-40 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 overlay-hero-dark opacity-80" />
-          <div className="absolute inset-0 bg-linear-to-t from-diagnostic-navy to-transparent opacity-60" />
-        </div>
+      <section className="bg-diagnostic-navy pt-40 pb-20 relative overflow-hidden min-h-[80vh] flex items-center">
+        <HeroMediaCarousel assets={heroAssets.doctors} />
         
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
@@ -40,13 +39,13 @@ function DoctorPage() {
             >
               <div className="img-container aspect-portrait shadow-4xl">
                 <img 
-                  src={`https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200`} 
+                  src={doc.image} 
                   alt={doc.name} 
                   className="img-cinematic grayscale-0"
                 />
                 <div className="overlay-cinematic opacity-40" />
                 <div className="absolute bottom-10 left-10 z-20">
-                  <div className="bg-emerald text-white px-6 py-2.5 rounded-sm text-[10px] uppercase tracking-[0.3em] shadow-2xl font-bold">
+                  <div className="bg-accent text-white px-6 py-2.5 rounded-sm text-[10px] uppercase tracking-[0.3em] shadow-2xl font-bold font-brand">
                     {doc.department}
                   </div>
                 </div>
@@ -61,11 +60,11 @@ function DoctorPage() {
               >
                 <div className="flex items-center gap-4 mb-10">
                   <span className="h-px w-12 bg-emerald" />
-                  <span className="text-emerald font-bold uppercase tracking-[0.3em] text-[10px] md:text-[11px]">Medical Specialist</span>
+                  <span className="text-emerald font-bold uppercase tracking-[0.3em] text-[10px] md:text-[11px] font-brand">Medical Specialist</span>
                 </div>
                 
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1] mb-6">{doc.name}</h1>
-                <p className="text-emerald font-bold text-xl md:text-2xl mb-12 tracking-tight">{doc.qualifications}</p>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-6 uppercase font-brand">{doc.name}</h1>
+                <p className="text-accent font-bold text-xl md:text-2xl mb-12 tracking-tight font-brand">{doc.qualifications}</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
                   <div className="flex items-start gap-6">

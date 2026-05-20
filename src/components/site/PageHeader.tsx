@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ImageSlot } from "./ImageSlot";
+import { HeroMediaCarousel } from "./HeroMediaCarousel";
+import { heroAssets } from "../../data/heroAssets";
 import { cn } from "../../lib/utils";
 
 export function PageHeader({
@@ -8,13 +9,13 @@ export function PageHeader({
   title,
   italicTail,
   intro,
-  slotId,
+  pageKey,
 }: {
   eyebrow: string;
   title: string;
   italicTail?: string;
   intro?: string;
-  slotId: string;
+  pageKey: keyof typeof heroAssets;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   
@@ -27,39 +28,12 @@ export function PageHeader({
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
+  const assets = heroAssets[pageKey] || heroAssets.home;
+
   return (
     <section ref={ref} className="relative min-h-[700px] lg:h-[calc(100vh-140px)] flex flex-col bg-diagnostic-navy overflow-hidden">
-      {/* Layer 1: Cinematic Media Layer (Mirroring Hero Rules) */}
-      <div className="absolute inset-0 z-0">
-        <motion.div 
-          style={{ scale }}
-          className="h-full w-full relative"
-        >
-          {/* Base Image Fallback */}
-          <ImageSlot 
-            id={slotId} 
-            ratio="" 
-            tone="dark" 
-            className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale-[0.2]" 
-          />
-          
-          {/* Video Layer */}
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale-[0.2]"
-          >
-            <source src="https://player.vimeo.com/external/517090025.sd.mp4?s=330c6a53696a40e796035079a40536a0c06830d6&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
-          </video>
-
-          {/* Layer 2: Multi-Stage Contrast Governance */}
-          <div className="absolute inset-0 bg-diagnostic-navy/60 z-10" />
-          <div className="absolute inset-0 overlay-hero-dark z-20" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(5,25,35,0.8)_0%,transparent_70%)] z-30" />
-        </motion.div>
-      </div>
+      {/* Layer 1: Automated Hero Carousel (Mirroring Hero Rules) */}
+      <HeroMediaCarousel assets={assets} scale={scale} />
 
       {/* Layer 2: Content - Balanced Breathing */}
       <div className="container-custom relative z-20 grow flex flex-col justify-center pt-[140px] pb-[80px] md:pt-[160px] md:pb-[100px] lg:pt-[120px] lg:pb-[80px]">

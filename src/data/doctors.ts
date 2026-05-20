@@ -10,6 +10,7 @@ export type Doctor = {
   registration?: string;
   timings: string;
   expertise: string[];
+  image: string;
   bio: string[];
   anchor?: boolean;
 };
@@ -117,6 +118,7 @@ export const doctors: Doctor[] = [
       "Restorative procedures",
       "Routine dental care",
     ],
+    image: "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?auto=format&fit=crop&q=80&w=1200",
     bio: ["Provides general dental consultation and routine procedures."],
   },
 ];

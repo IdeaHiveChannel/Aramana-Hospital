@@ -16,11 +16,11 @@ function MediaPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        eyebrow="Camps & media"
-        title="What the hospital"
-        italicTail="is doing, week to week."
-        intro="Cardiac screening camps, awareness sessions, women's health drives, dental school programmes and ongoing community outreach."
-        slotId="media-header"
+        eyebrow="Media & Records"
+        title="Institutional"
+        italicTail="Gallery."
+        intro="Visual documentation of clinical excellence, community outreach, and healthcare infrastructure at Aramana Hospital & Heart Centre."
+        pageKey="media"
       />
       
       <section className="section-padding bg-slate-50">

@@ -31,8 +31,7 @@ function DepartmentPage() {
         eyebrow="Specialty Department"
         title={dept.name}
         intro={dept.short}
-        slotId={dept.imageSlot || "departments-header"}
-        variant="restrained"
+        pageKey="departments"
       />
 
       {/* Department Content */}
@@ -96,7 +95,7 @@ function DepartmentPage() {
 
                 {/* Institutional Info List */}
                 <div className="bg-slate-50 p-10 rounded-xl border border-slate-100">
-                  <h3 className="text-cardiac-blue font-extrabold text-[11px] uppercase tracking-[0.2em] mb-8 text-muted">Patient Information</h3>
+                  <h3 className="text-muted font-extrabold text-[11px] uppercase tracking-[0.2em] mb-8">Patient Information</h3>
                   <div className="space-y-6">
                     {[
                       "24/7 Emergency Support Available",
@@ -142,9 +141,9 @@ function DepartmentPage() {
                   key={d.slug} 
                   to="/doctors/$slug" 
                   params={{ slug: d.slug }} 
-                  className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col h-full"
+                  className="group flex bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex-col h-full"
                 >
-                  <div className="p-10 flex-grow flex flex-col">
+                  <div className="p-10 grow flex flex-col">
                     <div className="flex items-center gap-3 mb-6">
                       <span className="h-px w-8 bg-emerald" />
                       <span className="text-emerald font-bold uppercase tracking-widest text-[9px]">Consultant Specialist</span>

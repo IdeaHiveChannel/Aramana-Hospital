@@ -22,7 +22,7 @@ function DepartmentsPage() {
         title="Medical Departments"
         italicTail="in Kasaragod."
         intro="A comprehensive range of specialist consultations and treatments including cardiology, gynaecology, general medicine, and advanced diagnostics."
-        slotId="departments-header"
+        pageKey="departments"
       />
       
       <section className="section-padding bg-white">
@@ -35,17 +35,17 @@ function DepartmentsPage() {
                 params={{ slug: d.slug }}
                 className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col"
               >
-                <div className="aspect-[16/10] overflow-hidden bg-slate-50 relative">
+                <div className="aspect-16/10 overflow-hidden bg-slate-50 relative">
                   <ImageSlot id={d.imageSlot} ratio="" tone="dark" className="w-full h-full object-cover transition-all duration-1000 ease-[0.22,1,0.36,1] group-hover:scale-102" />
                 </div>
                 
-                <div className="p-10 flex-grow flex flex-col">
+                <div className="p-10 grow flex flex-col">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="h-px w-8 bg-emerald" />
                     <span className="text-emerald font-bold uppercase tracking-widest text-[10px]">Specialist Unit</span>
                   </div>
                   <h3 className="text-2xl font-extrabold text-cardiac-blue mb-4 group-hover:text-emerald transition-colors uppercase tracking-tight">{d.name}</h3>
-                  <p className="text-muted text-base leading-relaxed mb-8 flex-grow font-medium">{d.short}</p>
+                  <p className="text-muted text-base leading-relaxed mb-8 grow font-medium">{d.short}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-8">
                     {d.services.slice(0, 3).map((s) => (

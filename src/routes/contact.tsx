@@ -22,7 +22,7 @@ function ContactPage() {
         title="Institutional"
         italicTail="Access."
         intro="Located at the heart of Kasaragod, providing 24/7 emergency response and specialist consultations for patients across North Kerala."
-        slotId="contact-header"
+        pageKey="contact"
       />
 
       <section className="section-padding bg-white">

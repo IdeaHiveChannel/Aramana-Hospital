@@ -21,6 +21,8 @@ import {
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 import { Link } from "@tanstack/react-router";
+import { HeroMediaCarousel } from "../components/site/HeroMediaCarousel";
+import { heroAssets } from "../data/heroAssets";
 
 export const Route = createFileRoute("/appointment")({
   component: AppointmentPage,
@@ -56,22 +58,9 @@ function AppointmentPage() {
 
   return (
     <div className="bg-white">
-      {/* SECTION 1 — HERO: Split Cinematic Layout */}
+      {/* SECTION 1 — HERO: Automated Carousel Background */}
       <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
-        {/* Cinematic Background */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000" 
-            alt="Consultation Room" 
-            className="w-full h-full object-cover grayscale-[0.3] opacity-40 blur-sm"
-          />
-          
-          {/* Multi-Stage Contrast Governance */}
-          <div className="absolute inset-0 bg-diagnostic-navy/40 z-10" />
-          <div className="absolute inset-0 overlay-hero-dark z-20" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(5,25,35,0.8)_0%,transparent_70%)] z-30" />
-          <div className="absolute inset-0 bg-linear-to-r from-diagnostic-navy via-diagnostic-navy/90 to-transparent z-40" />
-        </div>
+        <HeroMediaCarousel assets={heroAssets.home} />
 
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
@@ -84,12 +73,12 @@ function AppointmentPage() {
             >
               <div className="flex items-center gap-3 mb-8">
                 <span className="h-px w-10 bg-emerald" />
-                <span className="text-emerald font-bold uppercase tracking-[0.3em] text-[10px]">Institutional Intake</span>
+                <span className="text-emerald font-bold uppercase tracking-[0.3em] text-[10px] font-brand">Institutional Intake</span>
               </div>
               
-              <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none mb-8">
+              <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none mb-8 uppercase font-brand">
                 Request a <br />
-                <span className="text-emerald font-serif italic font-normal text-4xl md:text-5xl lg:text-6xl">Consultation.</span>
+                <span className="text-accent font-serif italic font-normal text-4xl md:text-5xl lg:text-6xl normal-case">Consultation.</span>
               </h1>
               
               <p className="text-white/70 text-lg md:text-xl font-medium leading-relaxed mb-12 max-w-xl">
@@ -99,33 +88,33 @@ function AppointmentPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="h-10 w-10 bg-emerald/20 rounded-lg flex items-center justify-center text-emerald">
+                    <div className="h-10 w-10 bg-accent/20 rounded-lg flex items-center justify-center text-accent">
                       <PhoneCall size={18} />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">24/7 Reception</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/60 font-brand">24/7 Reception</span>
                   </div>
-                  <div className="text-xl font-bold text-white tracking-tight">{hospital.phones.main}</div>
+                  <div className="text-xl font-bold text-white tracking-tight font-brand">{hospital.phones.main}</div>
                 </div>
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="h-10 w-10 bg-emerald/20 rounded-lg flex items-center justify-center text-emerald">
+                    <div className="h-10 w-10 bg-accent/20 rounded-lg flex items-center justify-center text-accent">
                       <Clock size={18} />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">OP Timings</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/60 font-brand">OP Timings</span>
                   </div>
-                  <div className="text-sm font-bold text-white tracking-tight">Mon - Sat: 9 AM - 7 PM</div>
+                  <div className="text-sm font-bold text-white tracking-tight font-brand">Mon - Sat: 9 AM - 7 PM</div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-8 items-center">
                 <div className="flex -space-x-3">
-                  {[1,2,3].map(i => (
+                  {doctors.slice(0, 3).map((doctor, i) => (
                     <div key={i} className="h-10 w-10 rounded-full border-2 border-diagnostic-navy bg-slate-200 overflow-hidden">
-                      <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="doctor" />
+                      <img src={doctor.image} alt={doctor.name} className="w-full h-full object-cover" />
                     </div>
                   ))}
                 </div>
-                <div className="text-white/60 text-[10px] font-bold uppercase tracking-[0.2em]">
+                <div className="text-white/60 text-[10px] font-bold uppercase tracking-[0.2em] font-brand">
                   Consult with Senior Specialists
                 </div>
               </div>

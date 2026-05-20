@@ -1,6 +1,8 @@
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
+import { HeroMediaCarousel } from "../site/HeroMediaCarousel";
+import { heroAssets } from "../../data/heroAssets";
 import { hospital } from "../../data/hospital";
 import { departments } from "../../data/departments";
 import { doctors } from "../../data/doctors";
@@ -33,41 +35,8 @@ export function Hero() {
   return (
     <>
       <section ref={ref} className="relative min-h-[700px] lg:h-[calc(100vh-140px)] flex flex-col bg-diagnostic-navy overflow-hidden">
-        {/* Layer 1: Cinematic Media Layer */}
-        <div className="absolute inset-0 z-0">
-          <motion.div 
-            style={{ scale }}
-            className="h-full w-full relative"
-          >
-            {/* Base Image Fallback - Guaranteed visibility */}
-            <img 
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000" 
-              alt="Aramana Hospital Background"
-              className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale-[0.2]"
-            />
-
-            {/* Video Layer */}
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale-[0.2]"
-            >
-              <source src="https://player.vimeo.com/external/517090025.sd.mp4?s=330c6a53696a40e796035079a40536a0c06830d6&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
-            </video>
-
-            {/* Layer 2: Multi-Stage Contrast Governance */}
-            {/* Global Dark Tint */}
-            <div className="absolute inset-0 bg-diagnostic-navy/60 z-10" />
-            
-            {/* Edge-to-Edge Gradient (Atmospheric) */}
-            <div className="absolute inset-0 overlay-hero-dark z-20" />
-            
-            {/* Horizontal Text Anchor (Left-weighted radial) */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(5,25,35,0.8)_0%,transparent_70%)] z-30" />
-          </motion.div>
-        </div>
+        {/* Layer 1: Automated Hero Carousel (Mirroring Hero Rules) */}
+        <HeroMediaCarousel assets={heroAssets.home} scale={scale} />
 
         {/* Layer 2: Content - Balanced Breathing */}
         <div className="container-custom relative z-20 grow flex flex-col justify-center pt-[140px] pb-[80px] md:pt-[160px] md:pb-[100px] lg:pt-[120px] lg:pb-[80px]">
