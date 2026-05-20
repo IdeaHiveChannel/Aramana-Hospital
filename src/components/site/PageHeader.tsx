@@ -72,15 +72,15 @@ export function PageHeader({
         >
           <div className="flex items-center gap-3 mb-8 md:mb-10">
             <span className="h-px w-10 bg-emerald/60" />
-            <span className="text-emerald font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px]">{eyebrow}</span>
+            <span className="text-emerald font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px] font-brand">{eyebrow}</span>
           </div>
 
-          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-8 md:mb-10 uppercase">
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.1] mb-8 md:mb-10 uppercase font-brand">
             {title}
             {italicTail && (
               <>
                 <br />
-                <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl italic normal-case">
+                <span className="text-accent text-display font-normal text-3xl md:text-5xl lg:text-6xl italic normal-case">
                   {italicTail}
                 </span>
               </>

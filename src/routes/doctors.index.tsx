@@ -46,7 +46,7 @@ function DoctorsPage() {
                   {/* Doctor Image - Trust Anchor Style */}
                   <div className="aspect-3/4 overflow-hidden relative bg-slate-50">
                     <img 
-                      src={`https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800`} 
+                      src={doctor.image} 
                       alt={`${doctor.name} - ${doctor.title} in Kasaragod`}
                       className="w-full h-full object-cover transition-all duration-1000 ease-[0.22,1,0.36,1] group-hover:scale-102"
                     />

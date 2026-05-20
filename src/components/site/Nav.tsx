@@ -71,12 +71,22 @@ export function Nav() {
       )}>
         <div className="container-custom flex items-center justify-between">
           {/* Logo Composition - Architectural Balance */}
-          <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <img 
-              src={hospital.logo} 
-              alt={hospital.logoAlt}
-              className="h-10 md:h-12 w-auto object-contain transition-transform duration-500 ease-[0.22,1,0.36,1] group-hover:scale-102"
-            />
+          <Link to="/" className="flex items-center gap-4 group shrink-0">
+            <div className="relative">
+              <img 
+                src={hospital.logo} 
+                alt={hospital.logoAlt}
+                className="h-10 md:h-12 w-auto object-contain transition-transform duration-500 ease-[0.22,1,0.36,1] group-hover:scale-105"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-primary font-black text-lg md:text-xl leading-none tracking-tight uppercase font-brand">
+                Aramana
+              </span>
+              <span className="text-[8px] md:text-[9px] font-medium text-accent uppercase tracking-[0.3em] leading-none mt-1 font-brand">
+                Hospital & Heart Centre
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation - Spaced and Precise */}

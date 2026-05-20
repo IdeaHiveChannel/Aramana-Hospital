@@ -78,11 +78,14 @@ export function Hero() {
             transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-5xl"
           >
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-8 md:mb-10">
+          <div className="flex flex-col">
+            <span className="text-emerald font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px] mb-6 md:mb-8 font-brand">Institutional Cardiac Excellence</span>
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.1] mb-8 md:mb-10 uppercase font-brand">
             Cardiac Care & <br />
-            <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl italic">Multi-Specialty</span> Services <br />
+            <span className="text-accent text-display font-normal text-3xl md:text-5xl lg:text-6xl italic normal-case">Multi-Specialty</span> Services <br />
             in Kasaragod.
           </h1>
+          </div>
 
           <p className="text-white/70 text-base md:text-lg max-w-2xl leading-relaxed mb-10 md:mb-16 font-medium">
             24/7 emergency heart care, interventional angioplasty, and specialist consultations. 

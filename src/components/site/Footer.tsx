@@ -13,12 +13,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <Link to="/" className="flex items-center gap-3 mb-6 group">
+            <Link to="/" className="flex items-center gap-4 mb-8 group">
               <img 
                 src={hospital.logo} 
                 alt={hospital.logoAlt}
                 className="h-12 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105"
               />
+              <div className="flex flex-col">
+                <span className="text-white font-black text-xl leading-none tracking-tight uppercase font-brand">
+                  Aramana
+                </span>
+                <span className="text-[9px] font-medium text-accent uppercase tracking-[0.3em] leading-none mt-1 font-brand">
+                  Hospital & Heart Centre
+                </span>
+              </div>
             </Link>
             
             <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-sm">

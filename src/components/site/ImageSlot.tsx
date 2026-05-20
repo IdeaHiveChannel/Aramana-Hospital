@@ -19,17 +19,18 @@ const imageMap: Record<string, string> = {
   "hero-main": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d",
   "about-main": "https://images.unsplash.com/photo-1516549655169-df83a0774514",
   "cardiology-main": "https://images.unsplash.com/photo-1576091160550-2173bdb999ef",
-  "diagnostics-main": "https://images.unsplash.com/photo-1579154234431-da7170a7f21c",
+  "diagnostics-main": "https://images.unsplash.com/photo-1519494080410-f9aa76cb4283",
   "doctors-main": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d",
   "emergency-main": "https://images.unsplash.com/photo-1519494080410-f9aa76cb4283",
   "hospital-corridor": "https://images.unsplash.com/photo-1516549655169-df83a0774514",
   "cath-lab": "https://images.unsplash.com/photo-1576091160550-2173bdb999ef",
-  "diagnostics-header": "https://images.unsplash.com/photo-1579154234431-da7170a7f21c",
-  "departments-header": "https://images.unsplash.com/photo-1516549655169-df83a0774514",
-  "doctors-header": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d",
+  "diagnostics-header": "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c",
+  "departments-header": "https://images.unsplash.com/photo-1586773860418-d3b9a8ec8c7e",
+  "doctors-header": "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e",
   "media-header": "https://images.unsplash.com/photo-1586773860418-d3b9a8ec8c7e",
   "diagnostics-ecg-room": "https://images.unsplash.com/photo-1519494080410-f9aa76cb4283",
   "diagnostics-cath-lab": "https://images.unsplash.com/photo-1576091160550-2173bdb999ef",
+  "contact-header": "https://images.unsplash.com/photo-1586773860418-d3b9a8ec8c7e",
 };
 
 export function ImageSlot({

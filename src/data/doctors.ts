@@ -36,6 +36,7 @@ export const doctors: Doctor[] = [
       "Heart failure management",
       "Interventional cardiology",
     ],
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200",
     bio: [
       "Heads the interventional cardiology programme at Aramana. Consults, performs diagnostic and therapeutic cath lab procedures, and leads the cardiac emergency response.",
       "Trains the in-house cardiac team and runs scheduled OP, diagnostics, and follow-up cardiac care six days a week.",
@@ -59,6 +60,7 @@ export const doctors: Doctor[] = [
       "Postnatal care",
       "Women's health consultation",
     ],
+    image: "https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=1200",
     bio: [
       "Consults across general gynaecology, antenatal, postnatal, and women's health concerns.",
     ],
@@ -75,6 +77,7 @@ export const doctors: Doctor[] = [
     registration: "TCMC Reg. No: 15678",
     timings: "Mon-Sat. OP hours",
     expertise: ["General medicine", "Primary care", "Routine consultation"],
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=1200",
     bio: [
       "Handles general medicine OP consultation, routine care, and first-line management across common conditions.",
     ],
@@ -95,6 +98,7 @@ export const doctors: Doctor[] = [
       "Restorative procedures",
       "Routine dental care",
     ],
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=1200",
     bio: ["Provides general dental consultation and routine procedures."],
   },
   {
