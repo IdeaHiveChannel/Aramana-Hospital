@@ -42,7 +42,6 @@ function AboutPage() {
         italicTail="Precision & Care."
         intro="Founded on the principles of clinical excellence, Aramana Hospital has grown from a specialized heart center to Kasaragod's leading multi-specialty destination."
         slotId="about-main"
-        variant="minimal"
       />
 
       {/* Institutional Story - Rebalanced Layout */}

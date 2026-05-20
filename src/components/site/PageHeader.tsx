@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { ImageSlot } from "./ImageSlot";
 import { cn } from "../../lib/utils";
 
@@ -8,105 +9,88 @@ export function PageHeader({
   italicTail,
   intro,
   slotId,
-  variant = "restrained",
 }: {
   eyebrow: string;
   title: string;
   italicTail?: string;
   intro?: string;
   slotId: string;
-  variant?: "cinematic" | "restrained" | "split" | "minimal" | "asymmetric";
 }) {
-  const isCinematic = variant === "cinematic";
-  const isSplit = variant === "split";
-  const isMinimal = variant === "minimal";
-  const isAsymmetric = variant === "asymmetric";
+  const ref = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
   return (
-    <section className={cn(
-      "relative bg-diagnostic-navy overflow-hidden",
-      isCinematic ? "h-[85vh] flex items-center" : 
-      isSplit ? "min-h-[70vh] flex items-center py-20" :
-      isAsymmetric ? "min-h-[80vh] flex items-end pb-32" :
-      isMinimal ? "py-32" : "pt-40 pb-20"
-    )}>
+    <section ref={ref} className="relative min-h-[700px] lg:h-[calc(100vh-140px)] flex flex-col bg-diagnostic-navy overflow-hidden">
+      {/* Layer 1: Cinematic Media Layer (Mirroring Hero Rules) */}
       <div className="absolute inset-0 z-0">
-        <ImageSlot id={slotId} ratio="" tone="dark" className={cn(
-          "h-full w-full object-cover grayscale-[0.2]",
-          (isCinematic || isSplit || isAsymmetric) ? "opacity-40" : "opacity-20"
-        )} />
-        
-        {/* Multi-Stage Contrast Governance */}
-        <div className="absolute inset-0 bg-diagnostic-navy/40 z-10" />
-        <div className="absolute inset-0 overlay-hero-dark z-20" />
-        
-        {isAsymmetric && (
-          <div className="absolute inset-0 bg-linear-to-tr from-diagnostic-navy via-diagnostic-navy/60 to-transparent z-30" />
-        )}
-        
-        {isSplit && (
-          <div className="absolute inset-0 bg-linear-to-r from-diagnostic-navy via-diagnostic-navy/80 to-transparent z-30" />
-        )}
+        <motion.div 
+          style={{ scale }}
+          className="h-full w-full relative"
+        >
+          {/* Base Image Fallback */}
+          <ImageSlot 
+            id={slotId} 
+            ratio="" 
+            tone="dark" 
+            className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale-[0.2]" 
+          />
+          
+          {/* Video Layer */}
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale-[0.2]"
+          >
+            <source src="https://player.vimeo.com/external/517090025.sd.mp4?s=330c6a53696a40e796035079a40536a0c06830d6&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+          </video>
 
-        {!isAsymmetric && !isSplit && (
+          {/* Layer 2: Multi-Stage Contrast Governance */}
+          <div className="absolute inset-0 bg-diagnostic-navy/60 z-10" />
+          <div className="absolute inset-0 overlay-hero-dark z-20" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(5,25,35,0.8)_0%,transparent_70%)] z-30" />
-        )}
-        
-        {!isCinematic && !isAsymmetric && !isSplit && <div className="absolute inset-0 bg-linear-to-t from-diagnostic-navy to-transparent opacity-60 z-40" />}
+        </motion.div>
       </div>
 
-      <div className={cn(
-        "container-custom relative z-10",
-        isCinematic ? "" : isAsymmetric ? "text-left" : "md:pt-10"
-      )}>
+      {/* Layer 2: Content - Balanced Breathing */}
+      <div className="container-custom relative z-20 grow flex flex-col justify-center pt-[140px] pb-[80px] md:pt-[160px] md:pb-[100px] lg:pt-[120px] lg:pb-[80px]">
         <motion.div
+          style={{ y, opacity }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className={cn(
-            "max-w-5xl",
-            isSplit ? "lg:max-w-3xl" : ""
-          )}
+          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-5xl"
         >
-          <div className={cn(
-            "flex items-center gap-3 mb-8",
-            isMinimal ? "justify-center" : ""
-          )}>
+          <div className="flex items-center gap-3 mb-8 md:mb-10">
             <span className="h-px w-10 bg-emerald/60" />
             <span className="text-emerald font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px]">{eyebrow}</span>
-            {isMinimal && <span className="h-px w-10 bg-emerald/60" />}
           </div>
 
-          <h1 className={cn(
-            "text-white font-extrabold tracking-tighter leading-[1.1] mb-10 uppercase",
-            isCinematic ? "text-6xl md:text-8xl lg:text-9xl" : 
-            isSplit ? "text-5xl md:text-7xl lg:text-8xl" :
-            isAsymmetric ? "text-5xl md:text-7xl lg:text-8xl" :
-            isMinimal ? "text-center text-4xl md:text-5xl lg:text-6xl" : "text-4xl md:text-6xl lg:text-7xl"
-          )}>
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-8 md:mb-10 uppercase">
             {title}
             {italicTail && (
               <>
-                {" "}
-                <span className={cn(
-                  "text-emerald text-display font-normal normal-case",
-                  isCinematic ? "text-5xl md:text-7xl lg:text-8xl" : 
-                  isSplit ? "text-4xl md:text-6xl lg:text-7xl" :
-                  isAsymmetric ? "text-4xl md:text-6xl lg:text-7xl" :
-                  isMinimal ? "text-3xl md:text-4xl lg:text-5xl block mt-4" : "text-3xl md:text-5xl lg:text-6xl"
-                )}>{italicTail}</span>
+                <br />
+                <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl italic normal-case">
+                  {italicTail}
+                </span>
               </>
             )}
           </h1>
           
           {intro && (
-            <p className={cn(
-              "leading-relaxed font-medium",
-              isCinematic ? "max-w-3xl text-white/70 text-lg md:text-xl" : 
-              isSplit ? "max-w-2xl text-white/70 text-lg md:text-xl" :
-              isAsymmetric ? "max-w-3xl text-white/70 text-lg md:text-xl" :
-              isMinimal ? "mx-auto text-center max-w-2xl text-white/60 text-base md:text-lg" : "max-w-2xl text-white/60 text-base md:text-lg"
-            )}>{intro}</p>
+            <p className="text-white/70 text-base md:text-lg max-w-2xl leading-relaxed font-medium">
+              {intro}
+            </p>
           )}
         </motion.div>
       </div>

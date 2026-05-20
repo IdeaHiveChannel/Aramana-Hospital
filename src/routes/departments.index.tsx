@@ -23,7 +23,6 @@ function DepartmentsPage() {
         italicTail="in Kasaragod."
         intro="A comprehensive range of specialist consultations and treatments including cardiology, gynaecology, general medicine, and advanced diagnostics."
         slotId="departments-header"
-        variant="restrained"
       />
       
       <section className="section-padding bg-white">

@@ -24,7 +24,6 @@ function DoctorsPage() {
         italicTail="Specialists."
         intro="A collective of highly experienced medical consultants including senior interventional cardiologists, heart specialists, and multi-specialty experts in Kasaragod."
         slotId="doctors-header"
-        variant="cinematic"
       />
 
       {/* Doctors Grid - Editorial Orchestration */}
