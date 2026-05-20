@@ -79,16 +79,16 @@ export function Hero() {
             className="max-w-5xl"
           >
             <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-8 md:mb-10">
-              Advanced Cardiology & <br />
-              <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl italic">Multi-Specialty</span> Hospital <br />
-              in Kasaragod.
-            </h1>
+            Cardiac Care & <br />
+            <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl italic">Multi-Specialty</span> Services <br />
+            in Kasaragod.
+          </h1>
 
-            <p className="text-white/70 text-base md:text-lg max-w-2xl leading-relaxed mb-10 md:mb-16 font-medium">
-              Providing 24/7 emergency cardiac care, interventional angioplasty, ICU monitoring, 
-              and specialist consultations. Kasaragod's premier heart center with 
-              advanced clinical infrastructure and experienced consultants.
-            </p>
+          <p className="text-white/70 text-base md:text-lg max-w-2xl leading-relaxed mb-10 md:mb-16 font-medium">
+            24/7 emergency heart care, interventional angioplasty, and specialist consultations. 
+            North Kerala's heart center with dedicated ICU monitoring and 
+            experienced clinical consultants.
+          </p>
 
             <div className="flex flex-wrap gap-6">
               <Link 

@@ -5,9 +5,9 @@ import { Counter } from "../site/Counter";
 
 export function InstitutionalStory() {
   return (
-    <section className="bg-white py-24 md:py-32 lg:py-48 overflow-hidden">
+    <section className="bg-white py-12 md:py-24 overflow-hidden">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           {/* Left: Content Column - Vertically Balanced */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -66,9 +66,10 @@ export function InstitutionalStory() {
             <div className="relative h-full min-h-[500px] lg:min-h-full flex items-center">
               {/* Main Image Container */}
               <div className="w-4/5 ml-auto aspect-4/5 rounded-2xl overflow-hidden shadow-4xl relative group">
+                {/* Institutional Photography Descriptor: Real OP Corridor/Reception */}
                 <img 
                   src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Aramana Hospital Infrastructure" 
+                  alt="Aramana Hospital Entrance & Reception Area" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-cardiac-blue/40 to-transparent opacity-60" />

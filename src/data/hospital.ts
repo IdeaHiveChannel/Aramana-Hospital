@@ -2,6 +2,8 @@ export const hospital = {
   name: "Aramana Hospital & Heart Centre",
   shortName: "Aramana",
   tagline: "Cardiology and multi-specialty care at Ashwini Nagar, Kasaragod.",
+  logo: "/Logo/aramana-logo.png",
+  logoAlt: "Aramana Hospital & Heart Centre Logo",
   address: {
     line1: "Ashwini Nagar",
     city: "Kasaragod",

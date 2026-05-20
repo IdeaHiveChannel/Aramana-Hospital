@@ -14,17 +14,11 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-6 group">
-              <div className="h-10 w-10 bg-white rounded flex items-center justify-center text-diagnostic-navy font-bold text-xl transition-transform group-hover:scale-105">
-                A
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-extrabold text-lg leading-none tracking-tight uppercase">
-                  Aramana
-                </span>
-                <span className="text-[9px] font-bold text-emerald uppercase tracking-[0.2em] leading-none mt-1">
-                  Hospital & Heart Centre
-                </span>
-              </div>
+              <img 
+                src={hospital.logo} 
+                alt={hospital.logoAlt}
+                className="h-12 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105"
+              />
             </Link>
             
             <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-sm">

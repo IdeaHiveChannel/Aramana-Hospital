@@ -24,31 +24,9 @@ const deptImages: Record<string, string> = {
 
 export function DoctorEcosystem() {
   return (
-    <section className="bg-white section-padding">
+    <section className="bg-white py-0">
       <div className="container-custom">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-8 bg-emerald" />
-              <span className="text-emerald font-bold uppercase tracking-widest text-xs">
-                Clinical Departments
-              </span>
-            </div>
-            <h2 className="text-cardiac-blue text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
-              Multi-Specialty <span className="text-emerald italic font-serif font-normal text-2xl md:text-3xl lg:text-4xl">Medical Services</span> <br />
-              in Kasaragod.
-            </h2>
-          </div>
-          <Link 
-            to="/departments" 
-            className="hidden md:flex items-center gap-3 text-cardiac-blue font-bold uppercase tracking-widest text-[10px] hover:text-emerald transition-colors"
-          >
-            <span>Consult Specialists</span>
-            <ArrowUpRight size={16} />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-100 border border-slate-100 overflow-hidden rounded-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-100 border-x border-slate-100">
           {departments.slice(0, 6).map((dept) => {
             const Icon = iconMap[dept.slug] || iconMap.default;
             return (
@@ -56,60 +34,54 @@ export function DoctorEcosystem() {
                 key={dept.slug}
                 to="/departments/$slug"
                 params={{ slug: dept.slug }}
-                className="group relative bg-white p-8 transition-all duration-500 hover:bg-diagnostic-navy"
+                className="group relative bg-white p-12 transition-all duration-500 hover:bg-diagnostic-navy border-b border-slate-100"
               >
                 <div className="relative z-10">
-                  <div className="h-12 w-12 bg-soft-grey rounded-lg flex items-center justify-center text-cardiac-blue mb-6 transition-all duration-500 group-hover:bg-white group-hover:text-emerald group-hover:scale-102">
-                    <Icon size={28} strokeWidth={1.5} />
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="h-14 w-14 bg-soft-grey rounded-xl flex items-center justify-center text-cardiac-blue transition-all duration-500 group-hover:bg-white group-hover:text-emerald group-hover:scale-105 shadow-sm">
+                      <Icon size={32} strokeWidth={1.2} />
+                    </div>
+                    <span className="text-[10px] font-bold text-muted uppercase tracking-[0.3em] group-hover:text-white/40">Dept</span>
                   </div>
                   
-                  <h3 className="text-xl font-extrabold text-cardiac-blue mb-3 transition-colors group-hover:text-white uppercase tracking-tight">
+                  <h3 className="text-2xl font-extrabold text-cardiac-blue mb-4 transition-colors group-hover:text-white uppercase tracking-tight leading-none">
                     {dept.name}
                   </h3>
                   
-                  <p className="text-muted text-sm leading-relaxed mb-6 transition-colors group-hover:text-white/80 font-medium">
+                  <p className="text-muted text-sm leading-relaxed mb-8 transition-colors group-hover:text-white/70 font-medium h-12 overflow-hidden line-clamp-2">
                     {dept.name === "Cardiology" 
                       ? "Specialized heart care including angioplasty, pacemaker, and 24/7 cardiac emergency."
                       : dept.short}
                   </p>
                   
-                  <div className="flex flex-wrap gap-2">
-                    {dept.services.slice(0, 3).map((service, sIdx) => (
+                  <div className="flex flex-wrap gap-2 mb-10">
+                    {dept.services.slice(0, 2).map((service, sIdx) => (
                       <span 
                         key={sIdx}
-                        className="text-[9px] font-bold uppercase tracking-widest bg-soft-grey text-cardiac-blue px-2.5 py-1 rounded transition-colors group-hover:bg-white/10 group-hover:text-emerald"
+                        className="text-[9px] font-bold uppercase tracking-widest border border-slate-200 text-cardiac-blue px-3 py-1.5 rounded-sm transition-colors group-hover:border-white/20 group-hover:text-emerald"
                       >
                         {service}
                       </span>
                     ))}
                   </div>
+
+                  <div className="flex items-center gap-3 text-emerald font-bold text-[10px] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+                    <span>Clinical Workflow</span>
+                    <ArrowUpRight size={14} />
+                  </div>
                 </div>
                 
                 {/* Hover Reveal Image */}
-                <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none">
+                <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-5 transition-opacity duration-1000 pointer-events-none">
                   <img 
                     src={deptImages[dept.slug] || deptImages.default} 
                     alt="" 
-                    className="w-full h-full object-cover grayscale"
+                    className="w-full h-full object-cover grayscale scale-110 group-hover:scale-100 transition-transform duration-1000"
                   />
-                </div>
-
-                <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0">
-                  <ArrowUpRight size={24} className="text-emerald" />
                 </div>
               </Link>
             );
           })}
-        </div>
-
-        <div className="mt-12 md:hidden text-center">
-          <Link 
-            to="/departments" 
-            className="inline-flex items-center gap-3 bg-cardiac-blue text-white px-8 py-4 rounded font-bold uppercase tracking-widest text-xs"
-          >
-            <span>View All Services</span>
-            <ArrowUpRight size={18} />
-          </Link>
         </div>
       </div>
     </section>

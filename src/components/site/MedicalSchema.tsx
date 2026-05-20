@@ -9,7 +9,7 @@ export function MedicalSchema() {
     "name": "Aramana Hospital & Heart Centre",
     "alternateName": "Aramana Cardiology Hospital Kasaragod",
     "url": "https://aramanahospital.com",
-    "logo": "https://aramanahospital.com/logo.png",
+    "logo": `https://aramanahospital.com${hospital.logo}`,
     "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1200",
     "description": "Advanced Cardiology & Multi-Specialty Hospital in Kasaragod, providing 24/7 emergency cardiac care, angioplasty, ICU, and diagnostics.",
     "address": {

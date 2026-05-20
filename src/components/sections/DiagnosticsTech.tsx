@@ -36,76 +36,51 @@ const diagnosticTools = [
 
 export function DiagnosticsTech() {
   return (
-    <section className="bg-white section-padding">
+    <section className="bg-slate-50 py-16 md:py-32">
       <div className="container-custom">
-        <div className="max-w-4xl mb-20">
-          <div className="flex items-center gap-3 mb-10">
-            <span className="h-px w-12 bg-emerald" />
-            <span className="text-emerald font-bold uppercase tracking-widest text-[10px] md:text-[11px]">
-              Diagnostics & Technology
-            </span>
-          </div>
-          <h2 className="text-cardiac-blue heading-section">
-            Advanced <span className="text-emerald text-display font-normal text-3xl md:text-4xl lg:text-5xl italic">Cardiac Tests</span> & <br />
-            Diagnostics in Kasaragod.
-          </h2>
-          <p className="mt-8 text-editorial">
-            Our diagnostics department provides specialized heart screening including ECG, echocardiography (Echo), 
-            Treadmill Test (TMT), Holter monitoring, and automated laboratory investigations for rapid, authoritative results.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {diagnosticTools.map((tool, idx) => {
-            const Icon = tool.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="group p-6 rounded-xl bg-soft-grey border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-2xl hover:-translate-y-1"
-              >
-                <div className="h-10 w-10 bg-white rounded-lg flex items-center justify-center text-cardiac-blue mb-6 shadow-sm group-hover:bg-cardiac-blue group-hover:text-emerald transition-colors duration-500">
-                  <Icon size={20} />
-                </div>
-                
-                <h3 className="text-lg font-extrabold text-cardiac-blue mb-3 group-hover:text-emerald transition-colors">
-                  {tool.title}
-                </h3>
-                
-                <p className="text-muted text-[13px] leading-relaxed">
-                  {tool.description}
-                </p>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Feature Strip */}
-        <div className="mt-16 bg-cardiac-blue rounded-xl p-8 md:p-10 overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald/10 skew-x-12 translate-x-1/4" />
-          
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="max-w-xl text-center md:text-left">
-              <h4 className="text-white text-xl md:text-2xl font-bold mb-3">
-                Rapid Cardiac Reporting
-              </h4>
-              <p className="text-white/60 text-sm">
-                We provide same-visit reporting for most cardiac investigations, 
-                minimizing waiting time and accelerating the treatment process.
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+          <div className="lg:w-1/3">
+            <div className="sticky top-32">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-px w-8 bg-emerald" />
+                <span className="text-emerald font-bold uppercase tracking-widest text-[10px]">Infrastructure</span>
+              </div>
+              <h2 className="text-cardiac-blue text-3xl md:text-5xl font-extrabold tracking-tighter leading-tight mb-8">
+                In-House <br />
+                <span className="text-emerald italic font-serif font-normal">Workflow</span>.
+              </h2>
+              <p className="text-muted text-lg font-medium leading-relaxed mb-10">
+                Aramana Hospital operates a centralized diagnostic cycle, reducing reporting times 
+                for cardiac investigations.
               </p>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="h-12 w-12 bg-white/10 rounded-full flex items-center justify-center text-emerald">
-                <Clock size={24} />
+              <div className="space-y-4">
+                {[
+                  "Same-visit cardiac reporting",
+                  "24/7 in-house laboratory",
+                  "Integrated Cath Lab access"
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-4 text-cardiac-blue font-bold text-xs uppercase tracking-widest">
+                    <div className="h-2 w-2 rounded-full bg-emerald" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
-              <div className="text-white">
-                <div className="text-xl font-bold">24-Hour</div>
-                <div className="text-[10px] uppercase tracking-widest opacity-60">Reporting Service</div>
-              </div>
             </div>
+          </div>
+
+          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {diagnosticTools.map((tool, idx) => {
+              const Icon = tool.icon;
+              return (
+                <div key={idx} className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
+                  <div className="h-12 w-12 bg-soft-grey rounded-lg flex items-center justify-center text-cardiac-blue mb-8 group-hover:bg-emerald group-hover:text-white transition-all">
+                    <Icon size={24} />
+                  </div>
+                  <h3 className="text-xl font-extrabold text-cardiac-blue mb-4 uppercase tracking-tight">{tool.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed font-medium">{tool.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

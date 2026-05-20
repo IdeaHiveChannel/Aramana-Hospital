@@ -72,17 +72,11 @@ export function Nav() {
         <div className="container-custom flex items-center justify-between">
           {/* Logo Composition - Architectural Balance */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <div className="relative h-9 w-9 md:h-10 md:w-10 bg-cardiac-blue rounded flex items-center justify-center text-white font-bold text-lg md:text-xl transition-transform duration-500 ease-[0.22,1,0.36,1] group-hover:scale-102">
-              A
-            </div>
-            <div className="flex flex-col">
-              <span className="text-cardiac-blue font-extrabold text-base md:text-lg leading-none tracking-tight uppercase">
-                Aramana
-              </span>
-              <span className="text-[7px] md:text-[8px] font-bold text-muted uppercase tracking-[0.2em] leading-none mt-1">
-                Hospital & Heart Centre
-              </span>
-            </div>
+            <img 
+              src={hospital.logo} 
+              alt={hospital.logoAlt}
+              className="h-10 md:h-12 w-auto object-contain transition-transform duration-500 ease-[0.22,1,0.36,1] group-hover:scale-102"
+            />
           </Link>
 
           {/* Desktop Navigation - Spaced and Precise */}

@@ -57,11 +57,11 @@ export function PatientStories() {
             <div className="flex items-center gap-4 mb-10">
               <span className="h-px w-12 bg-emerald" />
               <span className="text-emerald font-bold uppercase tracking-[0.3em] text-[10px] md:text-[11px]">
-                Patient Stories
+                Patient Feedback
               </span>
             </div>
             <h2 className="text-white heading-section">
-              Voices of <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl">Recovery</span> & Trust.
+              Real <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl">Experiences</span> from our patients.
             </h2>
           </div>
           

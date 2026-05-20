@@ -70,7 +70,7 @@ function DiagnosticsPage() {
         italicTail="and intensive care, in one workflow."
         intro="Same-visit cardiac investigations, in-house cath lab and intensive care running alongside OP and emergency reception."
         slotId="diagnostics-header"
-        variant="cinematic"
+        variant="split"
       />
       
       <section className="section-padding bg-slate-50">

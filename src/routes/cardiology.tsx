@@ -59,7 +59,7 @@ function CardiologyPage() {
         italicTail="in Kasaragod."
         intro="The most advanced cardiac care facility in North Kerala, specializing in emergency heart attack treatment, angioplasty, and senior cardiologist consultations."
         slotId="cardiology-main"
-        variant="cinematic"
+        variant="asymmetric"
       />
 
       {/* Lead Consultant Section - Institutional Hierarchy */}

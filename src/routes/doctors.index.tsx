@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { doctors } from "../data/doctors";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Calendar } from "lucide-react";
+import { ArrowRight, Clock, Calendar, CheckCircle2 } from "lucide-react";
 import { PageHeader } from "../components/site/PageHeader";
 
 export const Route = createFileRoute("/doctors/")({
@@ -24,6 +24,7 @@ function DoctorsPage() {
         italicTail="Specialists."
         intro="A collective of highly experienced medical consultants including senior interventional cardiologists, heart specialists, and multi-specialty experts in Kasaragod."
         slotId="doctors-header"
+        variant="cinematic"
       />
 
       {/* Doctors Grid - Editorial Orchestration */}
@@ -77,9 +78,13 @@ function DoctorsPage() {
                         <Clock size={16} className="text-emerald" />
                         <span>{doctor.timings}</span>
                       </div>
-                      <div className="flex items-center gap-4 text-muted text-sm font-medium">
-                        <Calendar size={16} className="text-emerald" />
-                        <span>Mon – Sat Availability</span>
+                      <div className="flex items-center gap-4 text-muted text-xs font-bold uppercase tracking-wider">
+                        <CheckCircle2 size={16} className="text-emerald" />
+                        <span>{doctor.experienceYears}</span>
+                      </div>
+                      <div className="flex items-center gap-4 text-muted text-[11px] font-medium leading-relaxed">
+                        <div className="h-1.5 w-1.5 rounded-full bg-emerald shrink-0" />
+                        <span>Focus: {doctor.proceduralExpertise}</span>
                       </div>
                     </div>
 

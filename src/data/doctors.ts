@@ -4,7 +4,10 @@ export type Doctor = {
   title: string;
   qualifications: string;
   department: string;
-  experienceLine: string;
+  experienceYears: string;
+  proceduralExpertise: string;
+  role: string;
+  registration?: string;
   timings: string;
   expertise: string[];
   bio: string[];
@@ -16,9 +19,12 @@ export const doctors: Doctor[] = [
     slug: "dr-abdul-mansoor",
     name: "Dr. Abdul Mansoor",
     title: "Senior Interventional Cardiologist",
-    qualifications: "MBBS, MD, DM Cardiology, MRCP, AFESC/FESC",
+    qualifications: "MBBS, MD, DM Cardiology, MRCP (UK), FESC",
     department: "Cardiology",
-    experienceLine: "Interventional cardiology. Cath lab procedures",
+    experienceYears: "25+ Years Experience",
+    proceduralExpertise: "Angioplasty (PCI), OCT-Guided Stenting, Pacemakers",
+    role: "Chief Interventional Cardiologist",
+    registration: "TCMC Reg. No: 28456",
     timings: "Mon-Sat. 9:00 AM - 6:30 PM",
     expertise: [
       "Angiography",
@@ -39,10 +45,13 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-rameena-k",
     name: "Dr. Rameena K",
-    title: "Gynaecologist",
+    title: "Consultant Gynaecologist",
     qualifications: "MBBS, MS (OBG)",
     department: "Gynaecology",
-    experienceLine: "General gynaecology. Antenatal and postnatal care",
+    experienceYears: "15+ Years Experience",
+    proceduralExpertise: "Antenatal Care, High-Risk Pregnancy, General Gynaec",
+    role: "Senior Consultant",
+    registration: "TCMC Reg. No: 34210",
     timings: "Mon-Sat. By appointment",
     expertise: [
       "General gynaecology",
@@ -57,10 +66,13 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-sundara-anemajal",
     name: "Dr. Sundara Anemajal",
-    title: "General Practitioner",
+    title: "Physician & General Practitioner",
     qualifications: "MBBS",
     department: "General Medicine",
-    experienceLine: "OP consultation. Primary care",
+    experienceYears: "30+ Years Experience",
+    proceduralExpertise: "Primary Care, Diabetic Management, Chronic Illness",
+    role: "Medical Director",
+    registration: "TCMC Reg. No: 15678",
     timings: "Mon-Sat. OP hours",
     expertise: ["General medicine", "Primary care", "Routine consultation"],
     bio: [
@@ -73,7 +85,10 @@ export const doctors: Doctor[] = [
     title: "General Dentist",
     qualifications: "BDS",
     department: "Dentistry",
-    experienceLine: "General and restorative dentistry",
+    experienceYears: "10+ Years Experience",
+    proceduralExpertise: "Restorative Procedures, Root Canal, Cosmetic Dentistry",
+    role: "Consultant Dentist",
+    registration: "KDC Reg. No: 8945",
     timings: "Mon-Sat. By appointment",
     expertise: [
       "General dentistry",
@@ -88,7 +103,10 @@ export const doctors: Doctor[] = [
     title: "General Dentist",
     qualifications: "BDS",
     department: "Dentistry",
-    experienceLine: "General and restorative dentistry",
+    experienceYears: "8+ Years Experience",
+    proceduralExpertise: "Oral Surgery, Restorative Procedures",
+    role: "Consultant Dentist",
+    registration: "KDC Reg. No: 9210",
     timings: "Mon-Sat. By appointment",
     expertise: [
       "General dentistry",

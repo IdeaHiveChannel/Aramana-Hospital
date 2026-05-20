@@ -53,16 +53,15 @@ export function CardiologyAuthority() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center gap-4 mb-10">
                 <span className="h-px w-12 bg-emerald" />
                 <span className="text-emerald font-bold uppercase tracking-[0.3em] text-[10px] md:text-[11px]">
-                  Chief Cardiologist
+                  Heart Center
                 </span>
               </div>
               
               <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-6">
-                Consult <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl italic">Dr. Abdul Mansoor</span> <br />
-                Senior Heart Specialist in Kasaragod.
+                Leading <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl">Cardiac</span> Care in North Kerala.
               </h2>
               
               <p className="text-emerald font-bold text-xl mb-10 tracking-tight">
@@ -70,10 +69,10 @@ export function CardiologyAuthority() {
               </p>
               
               <p className="text-white/70 text-lg leading-relaxed mb-12 max-w-2xl font-medium">
-                As a leading interventional cardiologist in Kasaragod, Dr. Mansoor specializes in 
-                emergency angioplasty, pacemaker implantations, and complex cardiac procedures. 
-                With over 20 years of expertise, he provides authoritative heart care for patients 
-                across North Kerala.
+                Dr. Mansoor leads our interventional cardiology unit, specializing in 
+                emergency angioplasty and pacemaker procedures. 
+                With over 20 years of experience, he provides dedicated heart care for patients 
+                across Kasaragod and North Kerala.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">

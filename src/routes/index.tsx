@@ -28,23 +28,25 @@ function Index() {
       {/* 3. Parallax Divider - Infrastructure - Refined Design */}
       <ParallaxSection 
         image="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=2000"
-        eyebrow="Precision Infrastructure"
-        title="Institutional Excellence"
-        subtitle="Designed for clinical excellence and patient comfort."
+        eyebrow="Facilities"
+        title="Diagnostic Infrastructure"
+        subtitle="Clinical workflow designed for patient comfort and efficient treatment."
       />
 
       {/* 4. Cardiology Authority Section (Featured Dr Mansoor) */}
-      <CardiologyAuthority />
+      <div className="bg-diagnostic-navy">
+        <CardiologyAuthority />
+      </div>
 
-      {/* 5. Service Ecosystem */}
+      {/* 5. Service Ecosystem - Structural Variation (Dense Operational Grid) */}
       <DoctorEcosystem />
 
       {/* 6. Parallax Divider - Diagnostics */}
       <ParallaxSection 
         image="https://images.unsplash.com/photo-1579154234431-da7170a7f21c?auto=format&fit=crop&q=80&w=2000"
-        eyebrow="Advanced Diagnostics"
-        title="Technological Authority"
-        subtitle="Precision technology for accurate clinical outcomes."
+        eyebrow="Diagnostics"
+        title="Reporting Workflow"
+        subtitle="In-house diagnostic testing for faster results and clinical decisions."
       />
 
       {/* 7. Technology & Diagnostics */}
