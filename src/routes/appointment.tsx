@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { hospital } from "../data/hospital";
 import { departments } from "../data/departments";
 import { doctors } from "../data/doctors";
@@ -15,7 +15,6 @@ import {
   CheckCircle2, 
   ShieldCheck, 
   Stethoscope,
-  Search,
   ArrowRight
 } from "lucide-react";
 import { motion } from "framer-motion";
