@@ -11,7 +11,7 @@ const links = [
   { to: "/departments", label: "Departments" },
   { to: "/cardiology", label: "Cardiology" },
   { to: "/diagnostics", label: "Diagnostics" },
-  { to: "/media", label: "Gallery" },
+  { to: "/gallery", label: "Gallery" },
 ];
 
 export function Nav() {
@@ -48,7 +48,7 @@ export function Nav() {
             <a 
               href={`https://wa.me/${hospital.whatsapp}`} 
               target="_blank" 
-              rel="noreferrer" 
+              rel="noopener noreferrer" 
               className="flex items-center gap-1.5 hover:text-emerald transition-colors"
             >
               <MessageSquare size={10} />

@@ -9,7 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as MediaRouteImport } from './routes/media'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as EmergencyRouteImport } from './routes/emergency'
 import { Route as DiagnosticsRouteImport } from './routes/diagnostics'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -22,9 +22,9 @@ import { Route as DepartmentsIndexRouteImport } from './routes/departments.index
 import { Route as DoctorsSlugRouteImport } from './routes/doctors.$slug'
 import { Route as DepartmentsSlugRouteImport } from './routes/departments.$slug'
 
-const MediaRoute = MediaRouteImport.update({
-  id: '/media',
-  path: '/media',
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmergencyRoute = EmergencyRouteImport.update({
@@ -91,7 +91,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/diagnostics': typeof DiagnosticsRoute
   '/emergency': typeof EmergencyRoute
-  '/media': typeof MediaRoute
+  '/gallery': typeof GalleryRoute
   '/departments/$slug': typeof DepartmentsSlugRoute
   '/doctors/$slug': typeof DoctorsSlugRoute
   '/departments/': typeof DepartmentsIndexRoute
@@ -105,7 +105,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/diagnostics': typeof DiagnosticsRoute
   '/emergency': typeof EmergencyRoute
-  '/media': typeof MediaRoute
+  '/gallery': typeof GalleryRoute
   '/departments/$slug': typeof DepartmentsSlugRoute
   '/doctors/$slug': typeof DoctorsSlugRoute
   '/departments': typeof DepartmentsIndexRoute
@@ -120,7 +120,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/diagnostics': typeof DiagnosticsRoute
   '/emergency': typeof EmergencyRoute
-  '/media': typeof MediaRoute
+  '/gallery': typeof GalleryRoute
   '/departments/$slug': typeof DepartmentsSlugRoute
   '/doctors/$slug': typeof DoctorsSlugRoute
   '/departments/': typeof DepartmentsIndexRoute
@@ -136,7 +136,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/diagnostics'
     | '/emergency'
-    | '/media'
+    | '/gallery'
     | '/departments/$slug'
     | '/doctors/$slug'
     | '/departments/'
@@ -150,7 +150,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/diagnostics'
     | '/emergency'
-    | '/media'
+    | '/gallery'
     | '/departments/$slug'
     | '/doctors/$slug'
     | '/departments'
@@ -164,7 +164,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/diagnostics'
     | '/emergency'
-    | '/media'
+    | '/gallery'
     | '/departments/$slug'
     | '/doctors/$slug'
     | '/departments/'
@@ -179,7 +179,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DiagnosticsRoute: typeof DiagnosticsRoute
   EmergencyRoute: typeof EmergencyRoute
-  MediaRoute: typeof MediaRoute
+  GalleryRoute: typeof GalleryRoute
   DepartmentsSlugRoute: typeof DepartmentsSlugRoute
   DoctorsSlugRoute: typeof DoctorsSlugRoute
   DepartmentsIndexRoute: typeof DepartmentsIndexRoute
@@ -188,11 +188,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/media': {
-      id: '/media'
-      path: '/media'
-      fullPath: '/media'
-      preLoaderRoute: typeof MediaRouteImport
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/emergency': {
@@ -283,7 +283,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DiagnosticsRoute: DiagnosticsRoute,
   EmergencyRoute: EmergencyRoute,
-  MediaRoute: MediaRoute,
+  GalleryRoute: GalleryRoute,
   DepartmentsSlugRoute: DepartmentsSlugRoute,
   DoctorsSlugRoute: DoctorsSlugRoute,
   DepartmentsIndexRoute: DepartmentsIndexRoute,

@@ -97,6 +97,8 @@ function DoctorPage() {
                   </Link>
                   <a 
                     href={`https://wa.me/${hospital.whatsapp}`}
+                    target="_blank"
+                    rel="noreferrer"
                     className="btn-outline-white flex items-center gap-4 py-5 px-10"
                   >
                     <MessageSquare size={18} className="text-emerald" />

@@ -1,4 +1,9 @@
-export const heroAssets = {
+export interface HeroAsset {
+  type: "image" | "video";
+  url: string;
+}
+
+export const heroAssets: Record<string, HeroAsset[]> = {
   home: [
     { type: "video", url: "https://player.vimeo.com/external/517090025.sd.mp4?s=330c6a53696a40e796035079a40536a0c06830d6&profile_id=164&oauth2_token_id=57447761" },
     { type: "image", url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d" },

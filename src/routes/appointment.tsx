@@ -35,26 +35,75 @@ export const Route = createFileRoute("/appointment")({
 });
 
 function AppointmentPage() {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [dept, setDept] = useState(departments[0].name);
-  const [doc, setDoc] = useState("Any consultant");
-  const [date, setDate] = useState("");
-  const [note, setNote] = useState("");
+  const [name, setName] = useState(() => sessionStorage.getItem("app_name") || "");
+  const [phone, setPhone] = useState(() => sessionStorage.getItem("app_phone") || "");
+  const [dept, setDept] = useState(() => sessionStorage.getItem("app_dept") || departments[0].name);
+  const [doc, setDoc] = useState(() => sessionStorage.getItem("app_doc") || "Any consultant");
+  const [date, setDate] = useState(() => sessionStorage.getItem("app_date") || "");
+  const [note, setNote] = useState(() => sessionStorage.getItem("app_note") || "");
+  const [honeypot, setHoneypot] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Persistence logic
+  useEffect(() => {
+    sessionStorage.setItem("app_name", name);
+    sessionStorage.setItem("app_phone", phone);
+    sessionStorage.setItem("app_dept", dept);
+    sessionStorage.setItem("app_doc", doc);
+    sessionStorage.setItem("app_date", date);
+    sessionStorage.setItem("app_note", note);
+  }, [name, phone, dept, doc, date, note]);
+
+  const sanitize = (str: string) => {
+    return str.replace(/[<>]/g, "").trim().substring(0, 500);
+  };
 
   const message = useMemo(() => {
     return [
       "Appointment request — Aramana Hospital",
-      `Name: ${name || "-"}`,
-      `Phone: ${phone || "-"}`,
-      `Department: ${dept}`,
-      `Doctor: ${doc}`,
-      `Preferred date: ${date || "-"}`,
-      `Notes: ${note || "-"}`,
+      `Name: ${sanitize(name) || "-"}`,
+      `Phone: ${sanitize(phone) || "-"}`,
+      `Department: ${sanitize(dept)}`,
+      `Doctor: ${sanitize(doc)}`,
+      `Preferred date: ${sanitize(date) || "-"}`,
+      `Notes: ${sanitize(note) || "-"}`,
     ].join("\n");
   }, [name, phone, dept, doc, date, note]);
 
   const wa = `https://wa.me/${hospital.whatsapp}?text=${encodeURIComponent(message)}`;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // 1. Honeypot check (Bot protection)
+    if (honeypot) {
+      console.warn("Bot detected via honeypot.");
+      return;
+    }
+
+    // 2. Simple Rate Limiting (Throttle)
+    const now = Date.now();
+    const lastSubmit = localStorage.getItem("last_appointment_submit");
+    if (lastSubmit && now - parseInt(lastSubmit) < 60000) { // 1 minute throttle
+      alert("Please wait a moment before sending another request.");
+      return;
+    }
+
+    // 3. Validation
+    if (!/^\+?[\d\s-]{10,}$/.test(phone)) {
+      alert("Please enter a valid phone number.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    localStorage.setItem("last_appointment_submit", now.toString());
+
+    // Securely open WhatsApp
+    const win = window.open(wa, "_blank", "noopener,noreferrer");
+    if (win) win.opener = null;
+
+    setTimeout(() => setIsSubmitting(false), 2000);
+  };
 
   return (
     <div className="bg-white">
@@ -136,11 +185,20 @@ function AppointmentPage() {
                 
                 <form 
                   className="space-y-6 relative z-10"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    window.open(wa, "_blank");
-                  }}
+                  onSubmit={handleSubmit}
                 >
+                  {/* Honeypot field (hidden from users) */}
+                  <div className="hidden" aria-hidden="true">
+                    <input 
+                      type="text" 
+                      name="hp_field" 
+                      tabIndex={-1} 
+                      autoComplete="off" 
+                      value={honeypot} 
+                      onChange={(e) => setHoneypot(e.target.value)} 
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Field label="Full name" icon={User}>
                       <input required value={name} onChange={(e) => setName(e.target.value)} className="input-premium" placeholder="John Doe" />
@@ -174,9 +232,16 @@ function AppointmentPage() {
                   </div>
 
                   <div className="pt-4">
-                    <button type="submit" className="w-full bg-emerald hover:bg-emerald-600 text-white font-bold uppercase tracking-[0.2em] text-[11px] py-5 rounded-lg shadow-xl shadow-emerald/20 transition-all flex items-center justify-center gap-4 group/btn">
+                    <button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className={cn(
+                        "w-full bg-emerald hover:bg-emerald-600 text-white font-bold uppercase tracking-[0.2em] text-[11px] py-5 rounded-lg shadow-xl shadow-emerald/20 transition-all flex items-center justify-center gap-4 group/btn",
+                        isSubmitting && "opacity-50 cursor-not-allowed"
+                      )}
+                    >
                       <MessageSquare size={18} className="transition-transform group-hover/btn:scale-110" />
-                      <span>Confirm via WhatsApp</span>
+                      <span>{isSubmitting ? "Opening WhatsApp..." : "Confirm via WhatsApp"}</span>
                     </button>
                     <p className="mt-6 text-center text-[9px] font-bold uppercase tracking-widest text-muted">
                       Your data is handled according to clinical privacy protocols.
@@ -326,7 +391,12 @@ function AppointmentPage() {
                 <PhoneCall size={20} className="text-emerald" />
                 <span>Call {hospital.phones.main}</span>
               </a>
-              <a href={`https://wa.me/${hospital.whatsapp}`} className="bg-white text-cardiac-blue px-10 py-5 rounded-xl font-bold uppercase tracking-[0.2em] text-[12px] flex items-center gap-4 shadow-xl hover:bg-slate-50 transition-all">
+              <a 
+                href={`https://wa.me/${hospital.whatsapp}`} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="bg-white text-cardiac-blue px-10 py-5 rounded-xl font-bold uppercase tracking-[0.2em] text-[12px] flex items-center gap-4 shadow-xl hover:bg-slate-50 transition-all"
+              >
                 <MessageSquare size={20} className="text-emerald" />
                 <span>WhatsApp Emergency</span>
               </a>

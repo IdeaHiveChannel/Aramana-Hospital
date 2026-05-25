@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { HeroMediaCarousel } from "./HeroMediaCarousel";
 import { heroAssets } from "../../data/heroAssets";
-import { cn } from "../../lib/utils";
 
 export function PageHeader({
   eyebrow,

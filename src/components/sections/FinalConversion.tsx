@@ -66,6 +66,8 @@ export function FinalConversion() {
                 </p>
                 <a 
                   href={`https://wa.me/${hospital.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer"
                   className="text-emerald font-bold text-[10px] uppercase tracking-widest flex items-center gap-2 hover:translate-x-1 transition-transform"
                 >
                   Message Now <ArrowRight size={12} />

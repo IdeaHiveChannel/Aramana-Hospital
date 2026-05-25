@@ -70,7 +70,7 @@ function ContactPage() {
                       <div className="text-xl font-bold text-cardiac-blue">{hospital.phones.main}</div>
                     </div>
                   </a>
-                  <a href={`https://wa.me/${hospital.whatsapp}`} target="_blank" rel="noreferrer" className="flex items-center gap-4 group">
+                  <a href={`https://wa.me/${hospital.whatsapp}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                     <div className="h-10 w-10 bg-soft-grey rounded-lg flex items-center justify-center text-emerald transition-all group-hover:bg-emerald group-hover:text-white">
                       <MessageSquare size={18} />
                     </div>

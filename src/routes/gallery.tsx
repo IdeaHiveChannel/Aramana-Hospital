@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "../components/site/PageHeader";
 import { mediaItems } from "../data/media";
 
-export const Route = createFileRoute("/media")({
+export const Route = createFileRoute("/gallery")({
   component: MediaPage,
   head: () => ({
     meta: [
