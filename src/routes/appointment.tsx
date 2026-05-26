@@ -24,18 +24,22 @@ import { Link } from "@tanstack/react-router";
 import { HeroMediaCarousel } from "../components/site/HeroMediaCarousel";
 import { heroAssets } from "../data/heroAssets";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/appointment")({
   component: AppointmentPage,
-  head: () => ({
-    meta: [
-      { title: "Book Appointment · Aramana Hospital, Kasaragod" },
-      {
-        name: "description",
-        content:
-          "Request a consultation at Aramana Hospital & Heart Centre. Cardiology, gynaecology, general medicine and dentistry.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Book Appointment at Aramana Hospital, Kasaragod",
+      description:
+        "Request a consultation at Aramana Hospital & Heart Centre for cardiology, gynaecology, general medicine, dentistry and diagnostics in Kasaragod.",
+      path: "/appointment",
+      keywords: [
+        "book hospital appointment Kasaragod",
+        "cardiology appointment Kasaragod",
+        "doctor appointment Aramana Hospital",
+      ],
+    }),
 });
 
 function AppointmentPage() {
@@ -133,9 +137,9 @@ function AppointmentPage() {
               </div>
 
               <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none mb-8 uppercase font-brand">
-                Request a <br />
+                Book Hospital <br />
                 <span className="text-accent font-serif italic font-normal text-4xl md:text-5xl lg:text-6xl normal-case">
-                  Consultation.
+                  Appointment.
                 </span>
               </h1>
 

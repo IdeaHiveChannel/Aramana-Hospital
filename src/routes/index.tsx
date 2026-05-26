@@ -10,8 +10,23 @@ import { EmergencyStrip } from "../components/sections/EmergencyStrip";
 import { FinalConversion } from "../components/sections/FinalConversion";
 import { ParallaxSection } from "../components/sections/ParallaxSection";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () =>
+    seo({
+      title: "Aramana Hospital & Heart Centre in Kasaragod",
+      description:
+        "Cardiology and multi-specialty hospital at Ashwini Nagar, Kasaragod with 24x7 emergency care, cath lab, ICU, diagnostics and OP consultation.",
+      path: "/",
+      keywords: [
+        "hospital in Kasaragod",
+        "cardiac emergency Kasaragod",
+        "cath lab Kasaragod",
+        "ICU Kasaragod",
+      ],
+    }),
 });
 
 function Index() {

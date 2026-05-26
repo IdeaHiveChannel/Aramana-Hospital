@@ -11,18 +11,22 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/emergency")({
   component: EmergencyPage,
-  head: () => ({
-    meta: [
-      { title: "Emergency · 24×7 · Aramana Hospital, Kasaragod" },
-      {
-        name: "description",
-        content:
-          "24×7 emergency reception at Aramana Hospital, Ashwini Nagar, Kasaragod. Cardiac emergency, trauma stabilisation and ambulance coordination.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "24x7 Emergency Hospital in Kasaragod",
+      description:
+        "24x7 emergency reception at Aramana Hospital, Ashwini Nagar, Kasaragod for cardiac emergency, trauma stabilisation and ambulance coordination.",
+      path: "/emergency",
+      keywords: [
+        "24x7 emergency Kasaragod",
+        "cardiac emergency Kasaragod",
+        "ambulance coordination Kasaragod",
+      ],
+    }),
 });
 
 function EmergencyPage() {
@@ -50,8 +54,8 @@ function EmergencyPage() {
           </div>
 
           <h1 className="heading-hero leading-[1.05] mb-10">
-            When Seconds <br />
-            <span className="text-emerald text-display font-normal">Count</span>, We Are Ready.
+            24x7 Emergency Hospital <br />
+            <span className="text-emerald text-display font-normal">in Kasaragod</span>
           </h1>
 
           <p className="text-white/70 text-lg md:text-xl max-w-3xl leading-relaxed mb-16 font-medium">

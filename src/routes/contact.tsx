@@ -4,18 +4,22 @@ import { hospital } from "../data/hospital";
 import { Phone, MapPin, Clock, MessageSquare, Mail, Navigation } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
-  head: () => ({
-    meta: [
-      { title: "Contact · Aramana Hospital & Heart Centre Kasaragod" },
-      {
-        name: "description",
-        content:
-          "Visit, call or WhatsApp Aramana Hospital & Heart Centre at Ashwini Nagar, Kasaragod. 24/7 emergency cardiac care and specialist consultations.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Contact Aramana Hospital, Kasaragod",
+      description:
+        "Visit, call or WhatsApp Aramana Hospital & Heart Centre at Ashwini Nagar, Kasaragod for 24x7 emergency cardiac care and specialist consultations.",
+      path: "/contact",
+      keywords: [
+        "Aramana Hospital contact",
+        "hospital phone number Kasaragod",
+        "emergency hospital Kasaragod",
+      ],
+    }),
 });
 
 function ContactPage() {
@@ -23,8 +27,8 @@ function ContactPage() {
     <div className="bg-white">
       <PageHeader
         eyebrow="Contact Us"
-        title="Institutional"
-        italicTail="Access."
+        title="Contact Aramana Hospital"
+        italicTail="in Kasaragod."
         intro="Located at the heart of Kasaragod, providing 24/7 emergency response and specialist consultations for patients across North Kerala."
         pageKey="contact"
       />

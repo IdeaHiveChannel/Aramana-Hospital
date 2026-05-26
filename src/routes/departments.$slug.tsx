@@ -5,6 +5,8 @@ import { ArrowRight, CheckCircle2, PhoneCall, Calendar, ChevronRight } from "luc
 import { hospital } from "../data/hospital";
 import { PageHeader } from "../components/site/PageHeader";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/departments/$slug")({
   component: DepartmentPage,
   loader: ({ params }) => {
@@ -12,12 +14,23 @@ export const Route = createFileRoute("/departments/$slug")({
     if (!dept) throw notFound();
     return { dept };
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData?.dept.name ?? "Department"} · Aramana Hospital` },
-      { name: "description", content: loaderData?.dept.short ?? "" },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    const dept = loaderData?.dept;
+    return seo({
+      title: dept ? `${dept.name} Department in Kasaragod` : "Medical Department in Kasaragod",
+      description:
+        dept?.short ??
+        "Specialist medical department at Aramana Hospital & Heart Centre, Kasaragod.",
+      path: dept ? `/departments/${dept.slug}` : "/departments",
+      keywords: dept
+        ? [
+            `${dept.name} Kasaragod`,
+            `${dept.name} department Kasaragod`,
+            ...dept.services.slice(0, 4),
+          ]
+        : ["medical department Kasaragod"],
+    });
+  },
 });
 
 function DepartmentPage() {

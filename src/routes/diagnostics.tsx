@@ -13,18 +13,23 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/diagnostics")({
   component: DiagnosticsPage,
-  head: () => ({
-    meta: [
-      { title: "Diagnostics · Aramana Hospital, Kasaragod" },
-      {
-        name: "description",
-        content:
-          "ECG, Echo, TMT, Holter, laboratory and imaging at Aramana Hospital with same-visit reporting for cardiac investigations.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Diagnostics and Cardiac Tests in Kasaragod",
+      description:
+        "ECG, Echo, TMT, Holter, laboratory testing and imaging at Aramana Hospital with same-visit reporting for cardiac investigations in Kasaragod.",
+      path: "/diagnostics",
+      keywords: [
+        "diagnostics Kasaragod",
+        "ECG Kasaragod",
+        "Echo test Kasaragod",
+        "TMT test Kasaragod",
+      ],
+    }),
 });
 
 const groups = [
@@ -130,8 +135,8 @@ function DiagnosticsPage() {
     <div className="bg-white">
       <PageHeader
         eyebrow="Diagnostics & infrastructure"
-        title="Diagnostics, cath lab"
-        italicTail="and intensive care, in one workflow."
+        title="Diagnostics & Cardiac Tests"
+        italicTail="in Kasaragod."
         intro="Same-visit cardiac investigations, in-house cath lab and intensive care running alongside OP and emergency reception."
         pageKey="diagnostics"
       />

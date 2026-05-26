@@ -61,20 +61,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aramana Hospital & Heart Centre / Kasaragod" },
-      {
-        name: "description",
-        content:
-          "Cardiology and multi-specialty hospital at Ashwini Nagar, Kasaragod. 24x7 emergency, cath lab, ICU, diagnostics and OP consultation.",
-      },
-      { name: "author", content: "Aramana Hospital & Heart Centre" },
-      { property: "og:title", content: "Aramana Hospital & Heart Centre" },
-      {
-        property: "og:description",
-        content: "Cardiology and multi-specialty care at Ashwini Nagar, Kasaragod.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#083344" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

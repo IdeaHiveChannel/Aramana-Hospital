@@ -4,18 +4,23 @@ import { motion } from "framer-motion";
 import { ArrowRight, Clock, CheckCircle2 } from "lucide-react";
 import { PageHeader } from "../components/site/PageHeader";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/doctors/")({
   component: DoctorsPage,
-  head: () => ({
-    meta: [
-      { title: "Doctors · Aramana Hospital, Kasaragod" },
-      {
-        name: "description",
-        content:
-          "Consultants at Aramana Hospital & Heart Centre — cardiology, gynaecology, general medicine and dentistry.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Doctors and Heart Specialists in Kasaragod",
+      description:
+        "Meet consultants at Aramana Hospital & Heart Centre, including cardiology, gynaecology, general medicine and dentistry specialists in Kasaragod.",
+      path: "/doctors",
+      keywords: [
+        "doctors in Kasaragod",
+        "heart specialist Kasaragod",
+        "cardiologist Kasaragod",
+        "consultants Aramana Hospital",
+      ],
+    }),
 });
 
 function DoctorsPage() {
@@ -24,8 +29,8 @@ function DoctorsPage() {
       {/* Cinematic Header */}
       <PageHeader
         eyebrow="Specialist Consultants"
-        title="Consult the Best Heart"
-        italicTail="Specialists."
+        title="Doctors & Heart Specialists"
+        italicTail="in Kasaragod."
         intro="A collective of highly experienced medical consultants including senior interventional cardiologists, heart specialists, and multi-specialty experts in Kasaragod."
         pageKey="doctors"
       />

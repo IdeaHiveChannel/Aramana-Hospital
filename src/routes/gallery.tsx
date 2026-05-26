@@ -2,18 +2,22 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "../components/site/PageHeader";
 import { mediaItems } from "../data/media";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/gallery")({
   component: MediaPage,
-  head: () => ({
-    meta: [
-      { title: "Camps & Media · Aramana Hospital, Kasaragod" },
-      {
-        name: "description",
-        content:
-          "Cardiac screening camps, awareness sessions, dental school programmes and community outreach by Aramana Hospital.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Aramana Hospital Gallery, Camps and Media",
+      description:
+        "View cardiac screening camps, awareness sessions, dental school programmes and community outreach by Aramana Hospital & Heart Centre in Kasaragod.",
+      path: "/gallery",
+      keywords: [
+        "Aramana Hospital gallery",
+        "medical camps Kasaragod",
+        "cardiac screening camps Kasaragod",
+      ],
+    }),
 });
 
 function MediaPage() {
@@ -21,8 +25,8 @@ function MediaPage() {
     <div className="bg-white">
       <PageHeader
         eyebrow="Media & Records"
-        title="Institutional"
-        italicTail="Gallery."
+        title="Aramana Hospital"
+        italicTail="Gallery & Camps."
         intro="Visual documentation of clinical excellence, community outreach, and healthcare infrastructure at Aramana Hospital & Heart Centre."
         pageKey="media"
       />

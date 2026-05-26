@@ -16,18 +16,23 @@ import { PageHeader } from "../components/site/PageHeader";
 import { ImageCarousel } from "../components/sections/ImageCarousel";
 import { ParallaxSection } from "../components/sections/ParallaxSection";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/cardiology")({
   component: CardiologyPage,
-  head: () => ({
-    meta: [
-      { title: "Cardiology · Aramana Hospital, Kasaragod" },
-      {
-        name: "description",
-        content:
-          "Diagnostic and interventional cardiology at Aramana: ECG, Echo, TMT, angiography, angioplasty, OCT-guided angioplasty, pacemaker procedures and 24×7 cardiac emergency.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Cardiology Hospital in Kasaragod",
+      description:
+        "Diagnostic and interventional cardiology at Aramana Hospital: ECG, Echo, TMT, angiography, angioplasty, OCT-guided angioplasty, pacemaker procedures and 24x7 cardiac emergency.",
+      path: "/cardiology",
+      keywords: [
+        "cardiology hospital Kasaragod",
+        "angioplasty Kasaragod",
+        "cardiologist Kasaragod",
+        "heart attack emergency Kasaragod",
+      ],
+    }),
 });
 
 const services = [

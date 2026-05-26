@@ -57,7 +57,7 @@ export function PageHeader({
             {title}
             {italicTail && (
               <>
-                <br />
+                <br />{" "}
                 <span className="text-accent text-display font-normal text-3xl md:text-5xl lg:text-6xl italic normal-case">
                   {italicTail}
                 </span>

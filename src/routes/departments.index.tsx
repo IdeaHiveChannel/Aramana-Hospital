@@ -4,18 +4,23 @@ import { ImageSlot } from "../components/site/ImageSlot";
 import { departments } from "../data/departments";
 import { IconArrow } from "../components/site/Icons";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/departments/")({
   component: DepartmentsPage,
-  head: () => ({
-    meta: [
-      { title: "Departments · Aramana Hospital, Kasaragod" },
-      {
-        name: "description",
-        content:
-          "Cardiology, General Medicine, Gynaecology, Dentistry, Diagnostics, ICU and 24×7 Emergency at Aramana Hospital, Ashwini Nagar, Kasaragod.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Medical Departments at Aramana Hospital, Kasaragod",
+      description:
+        "Explore cardiology, general medicine, gynaecology, dentistry, diagnostics, ICU and 24x7 emergency departments at Aramana Hospital, Ashwini Nagar, Kasaragod.",
+      path: "/departments",
+      keywords: [
+        "medical departments Kasaragod",
+        "cardiology department Kasaragod",
+        "gynaecology Kasaragod",
+        "dentistry Kasaragod",
+      ],
+    }),
 });
 
 function DepartmentsPage() {
@@ -23,7 +28,7 @@ function DepartmentsPage() {
     <div className="bg-white">
       <PageHeader
         eyebrow="Multi-Specialty Healthcare"
-        title="Medical Departments"
+        title="Medical Departments at Aramana"
         italicTail="in Kasaragod."
         intro="A comprehensive range of specialist consultations and treatments including cardiology, gynaecology, general medicine, and advanced diagnostics."
         pageKey="departments"

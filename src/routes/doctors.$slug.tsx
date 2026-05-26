@@ -15,6 +15,8 @@ import {
   GraduationCap,
 } from "lucide-react";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/doctors/$slug")({
   component: DoctorPage,
   loader: ({ params }) => {
@@ -22,15 +24,27 @@ export const Route = createFileRoute("/doctors/$slug")({
     if (!doc) throw notFound();
     return { doc };
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData?.doc.name ?? "Doctor"} · ${loaderData?.doc.title ?? ""} · Aramana` },
-      {
-        name: "description",
-        content: `${loaderData?.doc.name}, ${loaderData?.doc.title} at Aramana Hospital & Heart Centre, Kasaragod. ${loaderData?.doc.qualifications}.`,
-      },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    const doc = loaderData?.doc;
+    return seo({
+      title: doc
+        ? `${doc.name} - ${doc.title} in Kasaragod`
+        : "Doctor at Aramana Hospital, Kasaragod",
+      description: doc
+        ? `${doc.name}, ${doc.title} at Aramana Hospital & Heart Centre, Kasaragod. ${doc.qualifications}.`
+        : "Specialist doctor profile at Aramana Hospital & Heart Centre, Kasaragod.",
+      path: doc ? `/doctors/${doc.slug}` : "/doctors",
+      keywords: doc
+        ? [
+            doc.name,
+            doc.title,
+            `${doc.department} specialist Kasaragod`,
+            "doctor appointment Kasaragod",
+          ]
+        : ["doctor Kasaragod"],
+      type: "profile",
+    });
+  },
 });
 
 function DoctorPage() {

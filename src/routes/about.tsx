@@ -4,18 +4,22 @@ import { PageHeader } from "../components/site/PageHeader";
 import { ImageCarousel } from "../components/sections/ImageCarousel";
 import { ParallaxSection } from "../components/sections/ParallaxSection";
 
+import { seo } from "../lib/seo";
+
 export const Route = createFileRoute("/about")({
   component: AboutPage,
-  head: () => ({
-    meta: [
-      { title: "About · Aramana Hospital & Heart Centre, Kasaragod" },
-      {
-        name: "description",
-        content:
-          "Aramana Hospital & Heart Centre is a cardiology-led multi-specialty hospital at Ashwini Nagar, Kasaragod, serving north Kerala and south coastal Karnataka.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "About Aramana Hospital & Heart Centre, Kasaragod",
+      description:
+        "Learn about Aramana Hospital & Heart Centre, a cardiology-led multi-specialty hospital at Ashwini Nagar, Kasaragod serving North Kerala and South Coastal Karnataka.",
+      path: "/about",
+      keywords: [
+        "about Aramana Hospital",
+        "multi-specialty hospital North Kerala",
+        "cardiology-led hospital Kasaragod",
+      ],
+    }),
 });
 
 function AboutPage() {
@@ -45,8 +49,8 @@ function AboutPage() {
       {/* Cinematic Header - Re-engineered for contrast */}
       <PageHeader
         eyebrow="The Institution"
-        title="A Legacy of"
-        italicTail="Precision & Care."
+        title="About Aramana Hospital"
+        italicTail="in Kasaragod."
         intro="Founded on the principles of clinical excellence, Aramana Hospital has grown from a specialized heart center to Kasaragod's leading multi-specialty destination."
         pageKey="about"
       />
