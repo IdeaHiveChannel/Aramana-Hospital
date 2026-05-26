@@ -9,7 +9,11 @@ export const Route = createFileRoute("/doctors/")({
   head: () => ({
     meta: [
       { title: "Doctors · Aramana Hospital, Kasaragod" },
-      { name: "description", content: "Consultants at Aramana Hospital & Heart Centre — cardiology, gynaecology, general medicine and dentistry." },
+      {
+        name: "description",
+        content:
+          "Consultants at Aramana Hospital & Heart Centre — cardiology, gynaecology, general medicine and dentistry.",
+      },
     ],
   }),
 });
@@ -38,19 +42,19 @@ function DoctorsPage() {
                 transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
               >
-                <Link 
-                  to="/doctors/$slug" 
+                <Link
+                  to="/doctors/$slug"
                   params={{ slug: doctor.slug }}
                   className="group flex bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex-col h-full"
                 >
                   {/* Doctor Image - Trust Anchor Style */}
                   <div className="aspect-3/4 overflow-hidden relative bg-slate-50">
-                    <img 
-                      src={doctor.image} 
+                    <img
+                      src={doctor.image}
                       alt={`${doctor.name} - ${doctor.title} in Kasaragod`}
                       className="w-full h-full object-cover transition-all duration-1000 ease-[0.22,1,0.36,1] group-hover:scale-102"
                     />
-                    
+
                     {/* Specialty Badge */}
                     <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md px-4 py-2 rounded-sm text-cardiac-blue font-bold text-[10px] uppercase tracking-[0.2em] shadow-lg border border-slate-100">
                       {doctor.department}
@@ -61,17 +65,19 @@ function DoctorsPage() {
                   <div className="p-10 grow flex flex-col">
                     <div className="flex items-center gap-3 mb-6">
                       <span className="h-px w-8 bg-emerald" />
-                      <span className="text-emerald font-bold uppercase tracking-[0.2em] text-[9px]">Senior Consultant</span>
+                      <span className="text-emerald font-bold uppercase tracking-[0.2em] text-[9px]">
+                        Senior Consultant
+                      </span>
                     </div>
 
                     <h3 className="text-2xl font-extrabold text-cardiac-blue mb-2 group-hover:text-emerald transition-colors leading-tight uppercase tracking-tight">
                       {doctor.name}
                     </h3>
-                    
+
                     <p className="text-emerald font-bold text-sm mb-6 tracking-tight">
                       {doctor.qualifications}
                     </p>
-                    
+
                     <div className="space-y-4 mb-10">
                       <div className="flex items-center gap-4 text-muted text-sm font-medium">
                         <Clock size={16} className="text-emerald" />
@@ -110,14 +116,18 @@ function DoctorsPage() {
             <div className="max-w-2xl text-center lg:text-left">
               <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-6 leading-tight">
                 Direct Access to <br />
-                <span className="text-emerald text-display font-normal">Specialized Consultation</span>.
+                <span className="text-emerald text-display font-normal">
+                  Specialized Consultation
+                </span>
+                .
               </h2>
               <p className="text-white/60 text-lg font-medium leading-relaxed">
-                Skip the waiting period by booking your consultation online. Our reception will coordinate your visit for maximum clinical efficiency.
+                Skip the waiting period by booking your consultation online. Our reception will
+                coordinate your visit for maximum clinical efficiency.
               </p>
             </div>
-            <Link 
-              to="/appointment" 
+            <Link
+              to="/appointment"
               className="bg-white text-diagnostic-navy px-12 py-5 rounded-lg font-bold uppercase tracking-[0.2em] shadow-2xl hover:bg-emerald hover:text-white hover:translate-y-[-4px] transition-all text-xs whitespace-nowrap"
             >
               Book Appointment Now

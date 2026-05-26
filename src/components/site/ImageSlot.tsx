@@ -47,10 +47,7 @@ export function ImageSlot({
   return (
     <div
       data-image-slot={id}
-      className={cn(
-        "img-container overflow-hidden group",
-        className
-      )}
+      className={cn("img-container overflow-hidden group", className)}
       style={{ aspectRatio: ratio }}
     >
       <motion.img
@@ -60,14 +57,12 @@ export function ImageSlot({
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       />
-      
+
       <div className="overlay-cinematic opacity-40 group-hover:opacity-20 transition-opacity duration-700" />
-      
+
       <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-10 pointer-events-none">
         {children}
-        {caption && (
-          <div className="mt-6 text-hairline opacity-70 text-white">{caption}</div>
-        )}
+        {caption && <div className="mt-6 text-hairline opacity-70 text-white">{caption}</div>}
       </div>
     </div>
   );

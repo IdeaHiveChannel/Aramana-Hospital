@@ -10,7 +10,8 @@ export function MediaLayer() {
           <div>
             <div className="text-hairline opacity-60 mb-6">06 / Camps &amp; media</div>
             <h2 className="text-display text-4xl md:text-5xl leading-[1.05] max-w-xl">
-              An active <em className="not-italic font-serif italic">institution, not a static page.</em>
+              An active{" "}
+              <em className="not-italic font-serif italic">institution, not a static page.</em>
             </h2>
           </div>
           <Link to="/media" className="quiet-link">
@@ -27,7 +28,11 @@ export function MediaLayer() {
               </div>
               <div className="text-xl leading-snug font-medium">{m.title}</div>
               <p className="text-sm text-[#59666C] leading-relaxed flex-1">{m.summary}</p>
-              {m.place && <div className="text-xs text-[#59666C] border-t border-[#DED8CC] pt-4">{m.place}</div>}
+              {m.place && (
+                <div className="text-xs text-[#59666C] border-t border-[#DED8CC] pt-4">
+                  {m.place}
+                </div>
+              )}
             </div>
           ))}
         </div>

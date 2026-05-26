@@ -1,7 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { doctors } from "../data/doctors";
 import { hospital } from "../data/hospital";
-import { Heart, Activity, Zap, Scan, ShieldCheck, Clock, ArrowRight, CheckCircle2, ShieldAlert } from "lucide-react";
+import {
+  Heart,
+  Activity,
+  Zap,
+  Scan,
+  ShieldCheck,
+  Clock,
+  ArrowRight,
+  CheckCircle2,
+  ShieldAlert,
+} from "lucide-react";
 import { PageHeader } from "../components/site/PageHeader";
 import { ImageCarousel } from "../components/sections/ImageCarousel";
 import { ParallaxSection } from "../components/sections/ParallaxSection";
@@ -11,7 +21,11 @@ export const Route = createFileRoute("/cardiology")({
   head: () => ({
     meta: [
       { title: "Cardiology · Aramana Hospital, Kasaragod" },
-      { name: "description", content: "Diagnostic and interventional cardiology at Aramana: ECG, Echo, TMT, angiography, angioplasty, OCT-guided angioplasty, pacemaker procedures and 24×7 cardiac emergency." },
+      {
+        name: "description",
+        content:
+          "Diagnostic and interventional cardiology at Aramana: ECG, Echo, TMT, angiography, angioplasty, OCT-guided angioplasty, pacemaker procedures and 24×7 cardiac emergency.",
+      },
     ],
   }),
 });
@@ -23,9 +37,17 @@ const services = [
   { k: "Holter", v: "Ambulatory ECG monitoring.", icon: Scan },
   { k: "Angiography", v: "Diagnostic coronary angiography in the cath lab.", icon: Activity },
   { k: "Angioplasty", v: "PCI with stenting for obstructive disease.", icon: Heart },
-  { k: "OCT-guided angioplasty", v: "Optical coherence tomography for precision stenting.", icon: Scan },
+  {
+    k: "OCT-guided angioplasty",
+    v: "Optical coherence tomography for precision stenting.",
+    icon: Scan,
+  },
   { k: "Pacemaker procedures", v: "Implant and follow-up programming.", icon: Zap },
-  { k: "Cardiac ICU", v: "Continuous monitoring post-procedure and during recovery.", icon: ShieldCheck },
+  {
+    k: "Cardiac ICU",
+    v: "Continuous monitoring post-procedure and during recovery.",
+    icon: ShieldCheck,
+  },
   { k: "Cardiac emergency", v: "24×7 reception with cardiac response protocols.", icon: Clock },
 ];
 
@@ -34,20 +56,23 @@ function CardiologyPage() {
 
   const cardiologyGallery = [
     {
-      image: "https://images.unsplash.com/photo-1576091160550-2173bdb999ef?auto=format&fit=crop&q=80&w=1200",
+      image:
+        "https://images.unsplash.com/photo-1576091160550-2173bdb999ef?auto=format&fit=crop&q=80&w=1200",
       title: "Digital Cath Lab",
-      description: "State-of-the-art interventional suite for complex cardiac procedures."
+      description: "State-of-the-art interventional suite for complex cardiac procedures.",
     },
     {
-      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1200",
+      image:
+        "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1200",
       title: "Cardiac ICU",
-      description: "24/7 monitoring with specialized cardiac nursing staff."
+      description: "24/7 monitoring with specialized cardiac nursing staff.",
     },
     {
-      image: "https://images.unsplash.com/photo-1579154234431-da7170a7f21c?auto=format&fit=crop&q=80&w=1200",
+      image:
+        "https://images.unsplash.com/photo-1579154234431-da7170a7f21c?auto=format&fit=crop&q=80&w=1200",
       title: "Advanced Diagnostics",
-      description: "Precision Echo, TMT, and Holter monitoring facilities."
-    }
+      description: "Precision Echo, TMT, and Holter monitoring facilities.",
+    },
   ];
 
   return (
@@ -67,9 +92,9 @@ function CardiologyPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
             <div className="lg:col-span-5">
               <div className="aspect-4/5 rounded-lg overflow-hidden shadow-2xl relative group bg-slate-50 border border-slate-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200" 
-                  alt={`Dr. Abdul Mansoor - Senior Heart Specialist in Kasaragod`} 
+                <img
+                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200"
+                  alt={`Dr. Abdul Mansoor - Senior Heart Specialist in Kasaragod`}
                   className="w-full h-full object-cover transition-all duration-1000 ease-[0.22,1,0.36,1] group-hover:scale-102"
                 />
               </div>
@@ -77,23 +102,34 @@ function CardiologyPage() {
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3 mb-8">
                 <span className="h-px w-12 bg-emerald" />
-                <span className="text-emerald font-bold uppercase tracking-widest text-[11px]">Senior Cardiologist</span>
+                <span className="text-emerald font-bold uppercase tracking-widest text-[11px]">
+                  Senior Cardiologist
+                </span>
               </div>
-              <h2 className="text-cardiac-blue text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight mb-6 uppercase">Consult {lead.name}</h2>
-              <p className="text-emerald font-bold text-xl mb-8 tracking-tight">Interventional Cardiologist in Kasaragod · MD, DM, FESC</p>
+              <h2 className="text-cardiac-blue text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight mb-6 uppercase">
+                Consult {lead.name}
+              </h2>
+              <p className="text-emerald font-bold text-xl mb-8 tracking-tight">
+                Interventional Cardiologist in Kasaragod · MD, DM, FESC
+              </p>
               <p className="text-muted text-lg leading-relaxed mb-12 font-medium">
-                Dr. Mansoor specializes in heart attack treatment, angioplasty, and pacemaker implantations. With over 20 years of experience, he leads the cardiology department at Aramana Hospital, the premier heart center in Kasaragod.
+                Dr. Mansoor specializes in heart attack treatment, angioplasty, and pacemaker
+                implantations. With over 20 years of experience, he leads the cardiology department
+                at Aramana Hospital, the premier heart center in Kasaragod.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 {lead.expertise.slice(0, 4).map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4 text-cardiac-blue font-bold text-[13px] uppercase tracking-wide">
+                  <div
+                    key={idx}
+                    className="flex items-center gap-4 text-cardiac-blue font-bold text-[13px] uppercase tracking-wide"
+                  >
                     <CheckCircle2 size={18} className="text-emerald shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
-              <Link 
-                to="/doctors/$slug" 
+              <Link
+                to="/doctors/$slug"
                 params={{ slug: lead.slug }}
                 className="btn-primary inline-flex items-center gap-4"
               >
@@ -112,14 +148,19 @@ function CardiologyPage() {
             <div className="max-w-3xl">
               <div className="flex items-center gap-3 mb-6">
                 <span className="h-px w-12 bg-emerald" />
-                <span className="text-emerald font-bold uppercase tracking-widest text-[10px]">Clinical Infrastructure</span>
+                <span className="text-emerald font-bold uppercase tracking-widest text-[10px]">
+                  Clinical Infrastructure
+                </span>
               </div>
               <h2 className="text-white text-3xl md:text-5xl font-extrabold tracking-tighter leading-tight">
-                Advanced <span className="text-emerald italic font-serif font-normal">Cardiac Facilities</span>
+                Advanced{" "}
+                <span className="text-emerald italic font-serif font-normal">
+                  Cardiac Facilities
+                </span>
               </h2>
             </div>
           </div>
-          
+
           <ImageCarousel items={cardiologyGallery} aspectRatio="aspect-video md:aspect-21/9" />
         </div>
       </section>
@@ -130,18 +171,25 @@ function CardiologyPage() {
           <div className="text-center mb-20">
             <div className="flex items-center justify-center gap-3 mb-6">
               <span className="h-px w-8 bg-emerald" />
-              <span className="text-emerald font-bold uppercase tracking-widest text-[10px]">Infrastructure</span>
+              <span className="text-emerald font-bold uppercase tracking-widest text-[10px]">
+                Infrastructure
+              </span>
               <span className="h-px w-8 bg-emerald" />
             </div>
             <h2 className="heading-section text-cardiac-blue">Cardiology Ecosystem</h2>
-            <p className="text-muted text-lg max-w-2xl mx-auto font-medium">Complete cardiac support from diagnosis to intervention and recovery.</p>
+            <p className="text-muted text-lg max-w-2xl mx-auto font-medium">
+              Complete cardiac support from diagnosis to intervention and recovery.
+            </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s, idx) => {
               const Icon = s.icon;
               return (
-                <div key={idx} className="bg-white p-10 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
+                <div
+                  key={idx}
+                  className="bg-white p-10 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group"
+                >
                   <div className="h-12 w-12 bg-soft-grey rounded-lg flex items-center justify-center text-cardiac-blue mb-8 group-hover:bg-emerald group-hover:text-white transition-colors">
                     <Icon size={24} />
                   </div>
@@ -155,7 +203,7 @@ function CardiologyPage() {
       </section>
 
       {/* Parallax Divider - NEW PARALLAX */}
-      <ParallaxSection 
+      <ParallaxSection
         image="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000"
         eyebrow="Emergency Excellence"
         title="Seconds Count"
@@ -171,10 +219,12 @@ function CardiologyPage() {
             </div>
             <div>
               <h3 className="text-3xl font-extrabold mb-2">24/7 Cardiac Emergency</h3>
-              <p className="text-white/80 text-lg font-medium">Immediate intervention protocols available around the clock.</p>
+              <p className="text-white/80 text-lg font-medium">
+                Immediate intervention protocols available around the clock.
+              </p>
             </div>
           </div>
-          <a 
+          <a
             href={`tel:${hospital.phones.mainTel}`}
             className="bg-diagnostic-navy text-white px-10 py-5 rounded-lg font-bold uppercase tracking-[0.2em] shadow-2xl hover:bg-cardiac-blue hover:translate-y-[-4px] transition-all text-xs"
           >

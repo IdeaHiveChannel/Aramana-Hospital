@@ -10,7 +10,7 @@ export function FinalConversion() {
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full bg-emerald/5 -skew-x-12 translate-x-1/4" />
           <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-cardiac-blue/50 blur-3xl rounded-full" />
-          
+
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6">
@@ -19,27 +19,31 @@ export function FinalConversion() {
                   Take Action
                 </span>
               </div>
-              
+
               <h2 className="text-white text-3xl md:text-5xl font-extrabold leading-tight mb-6">
-                Experience <span className="text-emerald italic font-serif font-normal text-2xl md:text-4xl lg:text-5xl">Advanced</span> Cardiac Care Today.
+                Experience{" "}
+                <span className="text-emerald italic font-serif font-normal text-2xl md:text-4xl lg:text-5xl">
+                  Advanced
+                </span>{" "}
+                Cardiac Care Today.
               </h2>
-              
+
               <p className="text-white/60 text-base md:text-lg leading-relaxed mb-10 max-w-xl">
-                Whether you need a heart specialist consultation, diagnostic heart tests, or 
-                emergency cardiac care in Kasaragod, our team is ready to provide authoritative 
+                Whether you need a heart specialist consultation, diagnostic heart tests, or
+                emergency cardiac care in Kasaragod, our team is ready to provide authoritative
                 medical support for patients across North Kerala.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Link 
-                  to="/appointment" 
+                <Link
+                  to="/appointment"
                   className="bg-emerald text-white px-8 py-4 rounded-lg font-bold uppercase tracking-widest flex items-center gap-3 hover:bg-emerald/90 transition-all shadow-xl shadow-emerald/20 active:scale-95 text-xs"
                 >
                   <Calendar size={18} />
                   <span>Book Appointment</span>
                 </Link>
-                
-                <a 
+
+                <a
                   href={`tel:${hospital.phones.mainTel}`}
                   className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-bold uppercase tracking-widest flex items-center gap-3 hover:bg-white/20 transition-all active:scale-95 text-xs"
                 >
@@ -53,18 +57,16 @@ export function FinalConversion() {
               <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10">
                 <MapPin className="text-emerald mb-4" size={24} />
                 <h4 className="text-white font-bold text-base mb-1">Visit Us</h4>
-                <p className="text-white/40 text-[13px] leading-relaxed">
-                  {hospital.address.full}
-                </p>
+                <p className="text-white/40 text-[13px] leading-relaxed">{hospital.address.full}</p>
               </div>
-              
+
               <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10">
                 <MessageSquare className="text-emerald mb-4" size={24} />
                 <h4 className="text-white font-bold text-base mb-1">WhatsApp</h4>
                 <p className="text-white/40 text-[13px] leading-relaxed mb-3">
                   For quick queries and appointment coordination.
                 </p>
-                <a 
+                <a
                   href={`https://wa.me/${hospital.whatsapp}`}
                   target="_blank"
                   rel="noreferrer"

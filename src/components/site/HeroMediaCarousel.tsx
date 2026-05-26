@@ -13,11 +13,7 @@ interface HeroMediaCarouselProps {
   scale?: MotionValue<number>;
 }
 
-export function HeroMediaCarousel({
-  assets,
-  interval = 6000,
-  scale
-}: HeroMediaCarouselProps) {
+export function HeroMediaCarousel({ assets, interval = 6000, scale }: HeroMediaCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const next = useCallback(() => {
@@ -41,23 +37,20 @@ export function HeroMediaCarousel({
           transition={{ duration: 1.5, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          <motion.div 
-            style={{ scale }}
-            className="h-full w-full relative"
-          >
+          <motion.div style={{ scale }} className="h-full w-full relative">
             {assets[currentIndex].type === "video" ? (
-              <video 
-                autoPlay 
-                muted 
-                loop 
+              <video
+                autoPlay
+                muted
+                loop
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale-[0.2]"
               >
                 <source src={assets[currentIndex].url} type="video/mp4" />
               </video>
             ) : (
-              <img 
-                src={`${assets[currentIndex].url}?auto=format&fit=crop&q=80&w=2000`} 
+              <img
+                src={`${assets[currentIndex].url}?auto=format&fit=crop&q=80&w=2000`}
                 alt="Institutional Background"
                 className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale-[0.2]"
               />

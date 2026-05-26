@@ -20,26 +20,26 @@
 
   --color-background: var(--bg);
   --color-foreground: var(--ink);
-  
-  --color-cardiac-blue: #0A6FBE;
-  --color-cardiac-blue-dark: #0A4F93;
-  --color-emerald: #79BE43;
-  --color-emerald-dark: #4D8A2F;
+
+  --color-cardiac-blue: #0a6fbe;
+  --color-cardiac-blue-dark: #0a4f93;
+  --color-emerald: #79be43;
+  --color-emerald-dark: #4d8a2f;
   --color-diagnostic-navy: #051923;
-  --color-soft-grey: #F2F2F2;
-  
-  --color-primary: #0A6FBE;
+  --color-soft-grey: #f2f2f2;
+
+  --color-primary: #0a6fbe;
   --color-primary-foreground: var(--surface);
-  --color-accent: #79BE43;
+  --color-accent: #79be43;
   --color-accent-foreground: var(--surface);
-  --color-muted: #64748B;
-  --color-muted-foreground: #64748B;
-  --color-border: #E2E8F0;
+  --color-muted: #64748b;
+  --color-muted-foreground: #64748b;
+  --color-border: #e2e8f0;
   --color-card: var(--surface);
   --color-card-foreground: var(--ink);
   --color-popover: var(--surface);
   --color-popover-foreground: var(--ink);
-  --color-secondary: #0A4F93;
+  --color-secondary: #0a4f93;
   --color-secondary-foreground: var(--ink);
   --color-destructive: oklch(0.55 0.18 25);
   --color-destructive-foreground: var(--surface);
@@ -48,15 +48,15 @@
 }
 
 :root {
-  --ink: #0F172A;
-  --bg: #FFFFFF;
-  --surface: #FFFFFF;
-  --primary: #0A6FBE; /* Deep Medical Blue */
-  --accent: #79BE43;  /* Clinical Green */
-  --secondary: #0A4F93;
-  --muted: #64748B;
-  --border: #E2E8F0;
-  
+  --ink: #0f172a;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --primary: #0a6fbe; /* Deep Medical Blue */
+  --accent: #79be43; /* Clinical Green */
+  --secondary: #0a4f93;
+  --muted: #64748b;
+  --border: #e2e8f0;
+
   /* Systemic Spacing Logic - Premium Orchestration */
   --section-spacing-sm: 4rem;
   --section-spacing-md: 8rem;
@@ -84,7 +84,12 @@
     line-height: 1.7; /* Increased for premium reading rhythm */
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-sans font-bold tracking-tight;
     line-height: 1.15;
     margin-bottom: 1.5rem;
@@ -132,25 +137,24 @@
 
   /* Atmospheric Transition Systems */
   .overlay-hero-dark {
-    background: linear-gradient(to bottom, 
-      rgba(5, 25, 35, 0.85) 0%, 
-      rgba(5, 25, 35, 0.6) 40%, 
+    background: linear-gradient(
+      to bottom,
+      rgba(5, 25, 35, 0.85) 0%,
+      rgba(5, 25, 35, 0.6) 40%,
       rgba(5, 25, 35, 0.95) 100%
     );
   }
 
   .overlay-fade-to-white {
-    background: linear-gradient(to bottom, 
-      rgba(255, 255, 255, 0) 0%, 
-      rgba(255, 255, 255, 1) 100%
-    );
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
   }
 
   /* Fixed "Visual Mud" - Balanced stack for About/Cardiology pages */
   .overlay-cinematic-fog {
-    background: linear-gradient(to bottom, 
-      rgba(5, 25, 35, 0.7) 0%, 
-      rgba(5, 25, 35, 0.4) 50%, 
+    background: linear-gradient(
+      to bottom,
+      rgba(5, 25, 35, 0.7) 0%,
+      rgba(5, 25, 35, 0.4) 50%,
       rgba(255, 255, 255, 1) 100%
     );
   }
@@ -188,18 +192,23 @@
   }
 
   /* Aspect Ratio Discipline */
-  .aspect-hero { aspect-ratio: 16/9; }
-  .aspect-portrait { aspect-ratio: 4/5; }
-  .aspect-square { aspect-ratio: 1/1; }
-  .aspect-landscape { aspect-ratio: 16/10; }
+  .aspect-hero {
+    aspect-ratio: 16/9;
+  }
+  .aspect-portrait {
+    aspect-ratio: 4/5;
+  }
+  .aspect-square {
+    aspect-ratio: 1/1;
+  }
+  .aspect-landscape {
+    aspect-ratio: 16/10;
+  }
 
   /* Overlay Governance */
   .overlay-cinematic {
     @apply absolute inset-0 z-10 pointer-events-none;
-    background: linear-gradient(to bottom, 
-      rgba(5, 25, 35, 0.35) 0%, 
-      rgba(5, 25, 35, 0.55) 100%
-    );
+    background: linear-gradient(to bottom, rgba(5, 25, 35, 0.35) 0%, rgba(5, 25, 35, 0.55) 100%);
   }
 }
 

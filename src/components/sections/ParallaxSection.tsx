@@ -19,7 +19,7 @@ export function ParallaxSection({
   subtitle,
   height = "h-[50vh] md:h-[60vh]",
   overlayOpacity = 0.7,
-  className
+  className,
 }: ParallaxSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -30,26 +30,23 @@ export function ParallaxSection({
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   return (
-    <section 
+    <section
       ref={ref}
       className={cn("relative flex items-center justify-center overflow-hidden", height, className)}
     >
-      <motion.div 
-        className="absolute inset-0 z-0"
-        style={{ y }}
-      >
-        <div 
+      <motion.div className="absolute inset-0 z-0" style={{ y }}>
+        <div
           className="absolute inset-0 bg-center bg-cover scale-150"
           style={{ backgroundImage: `url(${image})` }}
         />
       </motion.div>
-      
-      <div 
-        className="absolute inset-0 z-10 bg-diagnostic-navy" 
+
+      <div
+        className="absolute inset-0 z-10 bg-diagnostic-navy"
         style={{ opacity: overlayOpacity }}
       />
       <div className="absolute inset-0 overlay-fade-to-white opacity-20 z-15" />
-      
+
       {(eyebrow || title || subtitle) && (
         <div className="relative z-20 container-custom text-center">
           <motion.div
@@ -62,7 +59,9 @@ export function ParallaxSection({
             {eyebrow && (
               <div className="flex items-center justify-center gap-4 mb-8">
                 <span className="h-px w-12 bg-emerald/60" />
-                <span className="text-emerald font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px]">{eyebrow}</span>
+                <span className="text-emerald font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px]">
+                  {eyebrow}
+                </span>
                 <span className="h-px w-12 bg-emerald/60" />
               </div>
             )}

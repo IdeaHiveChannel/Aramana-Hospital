@@ -17,7 +17,7 @@ export function PageHeader({
   pageKey: keyof typeof heroAssets;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -30,7 +30,10 @@ export function PageHeader({
   const assets = heroAssets[pageKey] || heroAssets.home;
 
   return (
-    <section ref={ref} className="relative min-h-[700px] lg:h-[calc(100vh-140px)] flex flex-col bg-diagnostic-navy overflow-hidden">
+    <section
+      ref={ref}
+      className="relative min-h-[700px] lg:h-[calc(100vh-140px)] flex flex-col bg-diagnostic-navy overflow-hidden"
+    >
       {/* Layer 1: Automated Hero Carousel (Mirroring Hero Rules) */}
       <HeroMediaCarousel assets={assets} scale={scale} />
 
@@ -45,7 +48,9 @@ export function PageHeader({
         >
           <div className="flex items-center gap-3 mb-8 md:mb-10">
             <span className="h-px w-10 bg-emerald/60" />
-            <span className="text-emerald font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px] font-brand">{eyebrow}</span>
+            <span className="text-emerald font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px] font-brand">
+              {eyebrow}
+            </span>
           </div>
 
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.1] mb-8 md:mb-10 uppercase font-brand">
@@ -59,7 +64,7 @@ export function PageHeader({
               </>
             )}
           </h1>
-          
+
           {intro && (
             <p className="text-white/70 text-base md:text-lg max-w-2xl leading-relaxed font-medium">
               {intro}

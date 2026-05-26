@@ -20,10 +20,10 @@ function NotFoundComponent() {
       <div className="max-w-md text-center">
         <h1 className="text-display text-7xl">404</h1>
         <h2 className="mt-4 text-xl font-medium">Page not found.</h2>
-        <p className="mt-2 text-sm text-[#59666C]">
-          This page doesn't exist or has been moved.
-        </p>
-        <Link to="/" className="btn-outline mt-8 inline-flex">Return home</Link>
+        <p className="mt-2 text-sm text-[#59666C]">This page doesn't exist or has been moved.</p>
+        <Link to="/" className="btn-outline mt-8 inline-flex">
+          Return home
+        </Link>
       </div>
     </div>
   );
@@ -38,8 +38,18 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <h1 className="text-display text-3xl">This page didn't load.</h1>
         <p className="mt-2 text-sm text-[#59666C]">Try refreshing or return to the homepage.</p>
         <div className="mt-6 flex justify-center gap-3">
-          <button onClick={() => { router.invalidate(); reset(); }} className="btn-primary">Try again</button>
-          <a href="/" className="btn-outline">Home</a>
+          <button
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
+            className="btn-primary"
+          >
+            Try again
+          </button>
+          <a href="/" className="btn-outline">
+            Home
+          </a>
         </div>
       </div>
     </div>
@@ -52,10 +62,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Aramana Hospital & Heart Centre / Kasaragod" },
-      { name: "description", content: "Cardiology and multi-specialty hospital at Ashwini Nagar, Kasaragod. 24x7 emergency, cath lab, ICU, diagnostics and OP consultation." },
+      {
+        name: "description",
+        content:
+          "Cardiology and multi-specialty hospital at Ashwini Nagar, Kasaragod. 24x7 emergency, cath lab, ICU, diagnostics and OP consultation.",
+      },
       { name: "author", content: "Aramana Hospital & Heart Centre" },
       { property: "og:title", content: "Aramana Hospital & Heart Centre" },
-      { property: "og:description", content: "Cardiology and multi-specialty care at Ashwini Nagar, Kasaragod." },
+      {
+        property: "og:description",
+        content: "Cardiology and multi-specialty care at Ashwini Nagar, Kasaragod.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -63,7 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

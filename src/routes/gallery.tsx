@@ -7,7 +7,11 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Camps & Media · Aramana Hospital, Kasaragod" },
-      { name: "description", content: "Cardiac screening camps, awareness sessions, dental school programmes and community outreach by Aramana Hospital." },
+      {
+        name: "description",
+        content:
+          "Cardiac screening camps, awareness sessions, dental school programmes and community outreach by Aramana Hospital.",
+      },
     ],
   }),
 });
@@ -22,16 +26,19 @@ function MediaPage() {
         intro="Visual documentation of clinical excellence, community outreach, and healthcare infrastructure at Aramana Hospital & Heart Centre."
         pageKey="media"
       />
-      
+
       <section className="section-padding bg-slate-50">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mediaItems.map((m, i) => (
-              <article key={i} className="bg-white rounded-xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500 flex flex-col group overflow-hidden">
+              <article
+                key={i}
+                className="bg-white rounded-xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500 flex flex-col group overflow-hidden"
+              >
                 {/* Image Layer */}
                 <div className="relative aspect-video overflow-hidden">
-                  <img 
-                    src={m.image} 
+                  <img
+                    src={m.image}
                     alt={m.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -49,15 +56,13 @@ function MediaPage() {
                       {m.date}
                     </span>
                   </div>
-                  
+
                   <h2 className="text-xl font-extrabold text-cardiac-blue mb-4 leading-tight group-hover:text-emerald transition-colors">
                     {m.title}
                   </h2>
-                  
-                  <p className="text-muted text-sm leading-relaxed mb-8 flex-1">
-                    {m.summary}
-                  </p>
-                  
+
+                  <p className="text-muted text-sm leading-relaxed mb-8 flex-1">{m.summary}</p>
+
                   {m.place && (
                     <div className="pt-6 border-t border-slate-100 text-[10px] font-bold text-muted uppercase tracking-widest flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald" />

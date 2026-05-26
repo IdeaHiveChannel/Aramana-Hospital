@@ -44,7 +44,10 @@ export function QuickAccess() {
                 <div className="text-hairline opacity-60 mb-1">Appointment</div>
                 <div className="text-base font-medium">Book consultation</div>
               </div>
-              <IconArrow size={20} className="group-hover:translate-x-1 transition-transform duration-500" />
+              <IconArrow
+                size={20}
+                className="group-hover:translate-x-1 transition-transform duration-500"
+              />
             </Link>
           </div>
         </div>
@@ -53,7 +56,15 @@ export function QuickAccess() {
   );
 }
 
-function QuickItem({ label, hint, children }: { label: string; hint: string; children: React.ReactNode }) {
+function QuickItem({
+  label,
+  hint,
+  children,
+}: {
+  label: string;
+  hint: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="px-6 py-7">
       <div className="text-hairline opacity-60 mb-1">{label}</div>

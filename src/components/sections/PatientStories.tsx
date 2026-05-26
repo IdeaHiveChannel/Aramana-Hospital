@@ -9,25 +9,31 @@ const videoStories = [
     title: "Emergency Cardiac Care Success",
     patient: "Rahman K.",
     location: "Kasaragod",
-    thumbnail: "https://images.unsplash.com/photo-1576091160550-2173bdb999ef?auto=format&fit=crop&q=80&w=1200",
-    description: "Reached Aramana at 2 AM with acute chest pain. The team's rapid response saved my life."
+    thumbnail:
+      "https://images.unsplash.com/photo-1576091160550-2173bdb999ef?auto=format&fit=crop&q=80&w=1200",
+    description:
+      "Reached Aramana at 2 AM with acute chest pain. The team's rapid response saved my life.",
   },
   {
     id: 2,
     title: "Angioplasty Recovery Journey",
     patient: "Saraswathi Amma",
     location: "Kanhangad",
-    thumbnail: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=1200",
-    description: "The clarity with which Dr. Mansoor explained the procedure gave me immense confidence."
+    thumbnail:
+      "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=1200",
+    description:
+      "The clarity with which Dr. Mansoor explained the procedure gave me immense confidence.",
   },
   {
     id: 3,
     title: "Comprehensive Health Screening",
     patient: "Thomas Varghese",
     location: "Bekal",
-    thumbnail: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
-    description: "Detailed diagnostics and preventive care that helped identify my condition early."
-  }
+    thumbnail:
+      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
+    description:
+      "Detailed diagnostics and preventive care that helped identify my condition early.",
+  },
 ];
 
 export function PatientStories() {
@@ -61,18 +67,22 @@ export function PatientStories() {
               </span>
             </div>
             <h2 className="text-white heading-section">
-              Real <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl">Experiences</span> from our patients.
+              Real{" "}
+              <span className="text-emerald text-display font-normal text-3xl md:text-5xl lg:text-6xl">
+                Experiences
+              </span>{" "}
+              from our patients.
             </h2>
           </div>
-          
+
           <div className="flex items-center gap-6 pb-4">
-            <button 
+            <button
               onClick={prev}
               className="h-14 w-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-emerald hover:border-emerald transition-all active:scale-95"
             >
               <ChevronLeft size={24} />
             </button>
-            <button 
+            <button
               onClick={next}
               className="h-14 w-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-emerald hover:border-emerald transition-all active:scale-95"
             >
@@ -92,16 +102,20 @@ export function PatientStories() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="absolute inset-0"
             >
-              <img 
-                src={videoStories[activeIdx].thumbnail} 
+              <img
+                src={videoStories[activeIdx].thumbnail}
                 alt={videoStories[activeIdx].title}
                 className="w-full h-full object-cover opacity-50"
               />
               <div className="absolute inset-0 bg-linear-to-t from-diagnostic-navy via-diagnostic-navy/40 to-transparent z-10" />
-              
+
               <div className="absolute inset-0 flex items-center justify-center z-20">
                 <button className="h-20 w-20 md:h-24 md:w-24 bg-emerald text-white rounded-full flex items-center justify-center shadow-3xl transition-all hover:scale-110 active:scale-95 group">
-                  <Play size={32} fill="currentColor" className="ml-1 transition-transform group-hover:scale-110" />
+                  <Play
+                    size={32}
+                    fill="currentColor"
+                    className="ml-1 transition-transform group-hover:scale-110"
+                  />
                 </button>
               </div>
 
@@ -115,7 +129,9 @@ export function PatientStories() {
                     {videoStories[activeIdx].patient[0]}
                   </div>
                   <div>
-                    <div className="text-white font-bold text-lg md:text-xl">{videoStories[activeIdx].patient}</div>
+                    <div className="text-white font-bold text-lg md:text-xl">
+                      {videoStories[activeIdx].patient}
+                    </div>
                     <div className="text-emerald text-[10px] md:text-[11px] uppercase tracking-[0.2em] font-bold">
                       {videoStories[activeIdx].location}
                     </div>
@@ -136,9 +152,9 @@ export function PatientStories() {
               }}
               className={cn(
                 "p-5 rounded-xl border transition-all text-left",
-                activeIdx === idx 
-                  ? "bg-white/5 border-emerald/50 shadow-lg shadow-emerald/5" 
-                  : "bg-transparent border-white/5 hover:border-white/20"
+                activeIdx === idx
+                  ? "bg-white/5 border-emerald/50 shadow-lg shadow-emerald/5"
+                  : "bg-transparent border-white/5 hover:border-white/20",
               )}
             >
               <div className="text-emerald font-bold text-[9px] uppercase tracking-widest mb-1">

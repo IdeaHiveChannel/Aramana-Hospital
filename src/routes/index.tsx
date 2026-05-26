@@ -26,7 +26,7 @@ function Index() {
       </div>
 
       {/* 3. Parallax Divider - Infrastructure - Refined Design */}
-      <ParallaxSection 
+      <ParallaxSection
         image="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=2000"
         eyebrow="Facilities"
         title="Diagnostic Infrastructure"
@@ -42,7 +42,7 @@ function Index() {
       <DoctorEcosystem />
 
       {/* 6. Parallax Divider - Diagnostics */}
-      <ParallaxSection 
+      <ParallaxSection
         image="https://images.unsplash.com/photo-1579154234431-da7170a7f21c?auto=format&fit=crop&q=80&w=2000"
         eyebrow="Diagnostics"
         title="Reporting Workflow"

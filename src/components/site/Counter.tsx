@@ -8,12 +8,7 @@ interface CounterProps {
   className?: string;
 }
 
-export function Counter({
-  value,
-  direction = "up",
-  suffix = "",
-  className = ""
-}: CounterProps) {
+export function Counter({ value, direction = "up", suffix = "", className = "" }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -22,9 +17,7 @@ export function Counter({
     damping: 30,
     stiffness: 100,
   });
-  const displayValue = useTransform(springValue, (latest) => 
-    Math.floor(latest).toLocaleString()
-  );
+  const displayValue = useTransform(springValue, (latest) => Math.floor(latest).toLocaleString());
 
   useEffect(() => {
     if (isInView) {

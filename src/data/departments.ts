@@ -48,12 +48,7 @@ export const departments: Department[] = [
     name: "Gynaecology",
     short: "Women's health, antenatal and postnatal care.",
     imageSlot: "dept-gynaec",
-    services: [
-      "General gynaecology",
-      "Antenatal care",
-      "Postnatal care",
-      "Consultation",
-    ],
+    services: ["General gynaecology", "Antenatal care", "Postnatal care", "Consultation"],
     body: [
       "Outpatient gynaecology, antenatal and postnatal follow-up, and women's health consultation.",
     ],
@@ -63,14 +58,8 @@ export const departments: Department[] = [
     name: "Dentistry",
     short: "General and restorative dental care.",
     imageSlot: "dept-dental",
-    services: [
-      "General dentistry",
-      "Restorative procedures",
-      "Routine dental care",
-    ],
-    body: [
-      "Dental OP for general consultation, restorative procedures, and routine care.",
-    ],
+    services: ["General dentistry", "Restorative procedures", "Routine dental care"],
+    body: ["Dental OP for general consultation, restorative procedures, and routine care."],
   },
   {
     slug: "diagnostics",
@@ -87,12 +76,7 @@ export const departments: Department[] = [
     name: "ICU & Cardiac ICU",
     short: "Critical care and cardiac monitoring.",
     imageSlot: "dept-icu",
-    services: [
-      "Cardiac ICU",
-      "General ICU",
-      "Continuous monitoring",
-      "Post-procedure care",
-    ],
+    services: ["Cardiac ICU", "General ICU", "Continuous monitoring", "Post-procedure care"],
     body: [
       "Cardiac and general intensive care, with continuous monitoring and post-procedure recovery support.",
     ],

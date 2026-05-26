@@ -24,7 +24,7 @@ export function ImageCarousel({
   autoPlay = true,
   interval = 5000,
   showDots = true,
-  className
+  className,
 }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -48,18 +48,18 @@ export function ImageCarousel({
   const variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? "100%" : "-100%",
-      opacity: 0
+      opacity: 0,
     }),
     center: {
       zIndex: 1,
       x: 0,
-      opacity: 1
+      opacity: 1,
     },
     exit: (direction: number) => ({
       zIndex: 0,
       x: direction < 0 ? "100%" : "-100%",
-      opacity: 0
-    })
+      opacity: 0,
+    }),
   };
 
   return (
@@ -74,7 +74,7 @@ export function ImageCarousel({
           exit="exit"
           transition={{
             x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.5 }
+            opacity: { duration: 0.5 },
           }}
           className="absolute inset-0"
         >
@@ -128,7 +128,7 @@ export function ImageCarousel({
               }}
               className={cn(
                 "h-1.5 transition-all rounded-full",
-                currentIndex === idx ? "w-8 bg-emerald" : "w-2 bg-white/40 hover:bg-white/60"
+                currentIndex === idx ? "w-8 bg-emerald" : "w-2 bg-white/40 hover:bg-white/60",
               )}
             />
           ))}

@@ -20,7 +20,9 @@ export function TrustStrip() {
       </div>
       <div className="container-x pb-10 text-sm text-[#59666C] flex flex-col md:flex-row md:items-center justify-between gap-2">
         <span>{hospital.address.full}</span>
-        <span>{hospital.phones.main} / {hospital.phones.mobile1} / {hospital.phones.mobile2}</span>
+        <span>
+          {hospital.phones.main} / {hospital.phones.mobile1} / {hospital.phones.mobile2}
+        </span>
       </div>
     </section>
   );

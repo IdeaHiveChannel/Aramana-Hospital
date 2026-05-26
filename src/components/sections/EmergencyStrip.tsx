@@ -28,17 +28,20 @@ export function EmergencyStrip() {
                 24/7 Emergency Services
               </span>
             </div>
-            
+
             <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-8">
               24/7 Emergency <br />
-              <span className="text-emerald italic font-serif font-normal text-2xl md:text-3xl lg:text-4xl">Cardiac Response</span> <br />
+              <span className="text-emerald italic font-serif font-normal text-2xl md:text-3xl lg:text-4xl">
+                Cardiac Response
+              </span>{" "}
+              <br />
               in Kasaragod.
             </h2>
-            
+
             <p className="text-white/60 text-base md:text-lg leading-relaxed mb-10 max-w-xl">
-              Our emergency department is primed for rapid heart attack treatment and critical care. 
-              With 24/7 ambulance coordination, state-of-the-art Cath Lab access, and ICU monitoring, 
-              we are North Kerala's trusted emergency hospital.
+              Our emergency department is primed for rapid heart attack treatment and critical care.
+              With 24/7 ambulance coordination, state-of-the-art Cath Lab access, and ICU
+              monitoring, we are North Kerala's trusted emergency hospital.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -48,7 +51,9 @@ export function EmergencyStrip() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-sm">Always Open</div>
-                  <div className="text-white/40 text-[9px] uppercase tracking-wider">24/7 Reception</div>
+                  <div className="text-white/40 text-[9px] uppercase tracking-wider">
+                    24/7 Reception
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-4 bg-white/5 p-5 rounded-xl border border-white/10">
@@ -57,7 +62,9 @@ export function EmergencyStrip() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-sm">Cardiac ICU</div>
-                  <div className="text-white/40 text-[9px] uppercase tracking-wider">Constant Monitoring</div>
+                  <div className="text-white/40 text-[9px] uppercase tracking-wider">
+                    Constant Monitoring
+                  </div>
                 </div>
               </div>
             </div>
@@ -65,7 +72,7 @@ export function EmergencyStrip() {
 
           <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 md:p-10 border border-white/10 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 h-32 w-32 bg-emerald/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
-            
+
             <div className="relative z-10">
               <div className="flex items-center gap-4 mb-8">
                 <div className="h-12 w-12 bg-emerald text-white rounded-xl flex items-center justify-center shadow-lg shadow-emerald/20">
@@ -73,19 +80,25 @@ export function EmergencyStrip() {
                 </div>
                 <div>
                   <h3 className="text-white text-xl font-bold">Emergency Contact</h3>
-                  <p className="text-white/40 text-[10px] uppercase tracking-widest">Immediate Assistance</p>
+                  <p className="text-white/40 text-[10px] uppercase tracking-widest">
+                    Immediate Assistance
+                  </p>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <a 
+                <a
                   href={`tel:${hospital.phones.mainTel}`}
                   className="group block bg-white text-diagnostic-navy p-5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-[9px] uppercase tracking-widest font-bold text-muted mb-1">Reception & OP</div>
-                      <div className="text-xl md:text-2xl font-extrabold">{hospital.phones.main}</div>
+                      <div className="text-[9px] uppercase tracking-widest font-bold text-muted mb-1">
+                        Reception & OP
+                      </div>
+                      <div className="text-xl md:text-2xl font-extrabold">
+                        {hospital.phones.main}
+                      </div>
                     </div>
                     <div className="h-10 w-10 bg-diagnostic-navy text-white rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                       <PhoneCall size={20} />
@@ -93,14 +106,18 @@ export function EmergencyStrip() {
                   </div>
                 </a>
 
-                <a 
+                <a
                   href={`tel:${hospital.phones.mobile1Tel}`}
                   className="group block bg-emerald text-white p-5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-emerald/20"
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-[9px] uppercase tracking-widest font-bold text-white/60 mb-1">Ambulance & Emergency</div>
-                      <div className="text-xl md:text-2xl font-extrabold">{hospital.phones.mobile1}</div>
+                      <div className="text-[9px] uppercase tracking-widest font-bold text-white/60 mb-1">
+                        Ambulance & Emergency
+                      </div>
+                      <div className="text-xl md:text-2xl font-extrabold">
+                        {hospital.phones.mobile1}
+                      </div>
                     </div>
                     <div className="h-10 w-10 bg-white text-emerald rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                       <Ambulance size={20} />
@@ -110,7 +127,8 @@ export function EmergencyStrip() {
               </div>
 
               <p className="mt-6 text-white/40 text-[10px] text-center leading-relaxed">
-                Emergency services are available 24x7. For cardiac emergencies, please call the ambulance number directly for rapid intervention protocols.
+                Emergency services are available 24x7. For cardiac emergencies, please call the
+                ambulance number directly for rapid intervention protocols.
               </p>
             </div>
           </div>
